@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Calendar, ExternalLink, TrendingUp, Users, Zap, Target,
   CheckCircle, ArrowRight, BarChart3, Clock, Shield
@@ -78,14 +77,9 @@ const GTMLandingPage = ({ config }: { config: GTMPageConfig }) => {
   // Reusable styles
   const heroStyle = { background: gradient, color: heroTextColor };
   const heroTextStyle = { color: heroTextColor };
-  const heroMuted = {
-    color: heroTextColor === "#FFFFFF" ? "rgba(255,255,255,0.75)" : "rgba(0,0,0,0.7)",
-  };
   const whiteBtn = { background: "#ffffff", color: "#000000" };
 
   const overlay25 = { background: "rgba(0,0,0,0.25)" };
-  const overlay20 = { background: "rgba(0,0,0,0.2)" };
-  const overlayWhite30 = { background: "rgba(255,255,255,0.3)" };
 
   const lightBg = { background: "#FFF7F3" };
   const textNearBlack = { color: "#0F172A" };
@@ -107,7 +101,7 @@ const GTMLandingPage = ({ config }: { config: GTMPageConfig }) => {
   const darkCard = { background: "#334155" };
 
   const revenueSpanStyle = {
-    color: theme.primary === "#FFFFFF" ? "#000" : "#fff",
+    color: "#fff",
     mixBlendMode: "overlay" as const,
   };
 
@@ -123,10 +117,6 @@ const GTMLandingPage = ({ config }: { config: GTMPageConfig }) => {
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
             Tailored for {company.role} at {company.name} — here's how I'd move the numbers in 90 days.
           </p>
-
-          {company.logoUrl && (
-            <img src={company.logoUrl} alt={`${company.name} logo`} className="h-10 mx-auto mb-6 opacity-90" />
-          )}
 
           <div className="rounded-2xl p-8 max-w-4xl mx-auto mb-12" style={overlay25}>
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
