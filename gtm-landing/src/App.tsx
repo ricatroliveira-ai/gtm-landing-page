@@ -66,7 +66,6 @@ fontWeight: 700
 
 const overlay25: React.CSSProperties = { background: "rgba(0,0,0,0.25)" };
 const overlay20: React.CSSProperties = { background: "rgba(0,0,0,0.2)" };
-const overlayWhite30: React.CSSProperties = { background: "rgba(255,255,255,0.3)" };
 
 const lightBg: React.CSSProperties = { background: "#FFF7F3" };
 const textNearBlack: React.CSSProperties = { color: "#0F172A" };
