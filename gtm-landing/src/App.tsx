@@ -53,9 +53,6 @@ const calUrl = "https://calendly.com/checkaipulse/30min";
 
 const heroStyle: React.CSSProperties = { background: gradient, color: heroTextColor };
 const heroTextStyle: React.CSSProperties = { color: heroTextColor };
-const heroMuted: React.CSSProperties = {
-color: heroTextColor === "#FFFFFF" ? "rgba(255,255,255,0.75)" : "rgba(0,0,0,0.7)"
-};
 const whiteBtn: React.CSSProperties = {
 background: "#ffffff",
 color: "#000000",
