@@ -112,17 +112,15 @@ A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
 
       <div className="rounded-2xl p-8 max-w-4xl mx-auto mb-12" style={overlay25}>
         {sendsparkUrl ? (
-          <a href={sendsparkUrl} target="_blank" rel="noopener noreferrer" className="block">
-            <div className="aspect-video rounded-xl flex items-center justify-center shadow-2xl" style={overlay20}>
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={overlayWhite30}>
-                  <div className="w-0 h-0 ml-1 border-l-[16px] border-l-white border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent" />
-                </div>
-                <p className="font-medium text-lg" style={heroTextStyle}>Personal Video Message</p>
-                <p className="text-sm mt-2" style={heroMuted}>Click to play</p>
-              </div>
-            </div>
-          </a>
+          <div className="aspect-video rounded-xl shadow-2xl overflow-hidden">
+            <iframe
+              src={sendsparkUrl.replace('/share/', '/embed/')}
+              className="w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         ) : (
           <div className="aspect-video rounded-xl flex items-center justify-center shadow-2xl" style={overlay20}>
             <p className="font-medium text-lg" style={heroTextStyle}>Personal Video Message</p>
