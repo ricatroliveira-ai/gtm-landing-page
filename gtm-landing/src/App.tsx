@@ -32,7 +32,7 @@ export type GTMPageConfig = {
     riskMitigation: string;
   };
   theme: { primary: string; secondary: string; accent: string };
-  loomUrl: string;
+  sendsparkUrl: string;
 };
 
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
@@ -44,67 +44,13 @@ function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   return yiq >= 128 ? "#000000" : "#FFFFFF";
 }
 
-const CONFIG: GTMPageConfig = {
-  "company": {
-    "name": "Alkami Technology",
-    "role": "Sr Director, Product Management (GTM)"
-  },
-  "challenges": [
-    {
-      "title": "Standardize GTM Processes for Efficiency",
-      "approach": [
-        "Design scalable GTM architecture and playbook",
-        "Implement trigger-based sequencing for efficiency",
-        "Deploy AI-first execution across phone, email, and LinkedIn"
-      ]
-    },
-    {
-      "title": "Enhance Pricing Governance and Sales Enablement",
-      "approach": [
-        "Establish guardrails for pricing governance and sales enablement",
-        "Ensure pricing and sales processes have RevOps automation",
-        "Utilize AI agents for pricing signals and routing"
-      ]
-    },
-    {
-      "title": "Improve Cross-Functional Alignment and Transparency",
-      "approach": [
-        "Orchestrate GTM workflows across multiple tools for visibility",
-        "Deliver operator-grade dashboards for cross-functional alignment",
-        "Track and optimize KPIs across departments for transparency"
-      ]
-    }
-  ],
-  "skills": [
-    "GTM architecture and playbook design",
-    "AI-first execution across phone, email, and LinkedIn",
-    "Forecast, pipeline hygiene, and RevOps automation"
-  ],
-  "trackRecord": [
-    "$1.2M qualified pipeline in 4 months",
-    "0.08% spam complaints",
-    "0.9% unsubscribe rate",
-    "6x increase in meetings"
-  ],
-  "icp": {
-    "demographics": "Upper mid-market, Fintech/Payments, high-growth and culture-focused",
-    "messagePillars": "Scalability and reliability; Personalization and AI leverage; Speed to value and time to first outcome",
-    "channelFocus": "Outbound POC to prove value fast; Partner co-sell and marketplace attach",
-    "riskMitigation": "Data access and integration risk; Forecast or ROI skepticism"
-  },
-  "theme": {
-    "primary": "#BAA769",
-    "secondary": "#F50057",
-    "accent": "#2196F3"
-  },
-  "sendsparkURL": "https://sendspark.com/share/jscpyrqr6capxz2vfkezuaq6asz5eevq"
-} as GTMPageConfig;
+const CONFIG: GTMPageConfig = {   "company": {     "name": "Adobe",     "role": "Sr. Channel GTM Product Marketing Manager"   },   "challenges": [     {       "title": "Drive Growth in Higher Education Channel",       "approach": [         "Craft persona-based dynamic copy for education segment",         "Implement trigger-based sequencing for higher education leads",         "Operationalize repeatable outbound motions for education audience"       ]     },     {       "title": "Optimize Channel Reach and Impact",       "approach": [         "Designed agentic revenue systems to capture and route signals efficiently",         "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",         "Deployed persona-based dynamic copy for personalized outreach"       ]     },     {       "title": "Accelerate Growth Through Field Execution",       "approach": [         "Applied role- and vertical-specific intros to raise SQL rate",         "Built ICPs and sequenced outreach for structured forecasting",         "Lifted meetings per week from 1 to 6 through GTM architecture"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "31% reply-to-meeting conversion (up from 14%)",     "0.08% spam complaints",     "0.9% unsubscribe rate",     "6x increase in meetings"   ],   "icp": {     "demographics": "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven.",     "messagePillars": "Scalability and reliability; Integration fit and data quality; Revenue efficiency",     "channelFocus": "Partner co-sell and marketplace attach; ABM with executive outreach",     "riskMitigation": "Adoption risk → manager-first enablement, default templates, usage goals; Data access and integration risk → scoped POC, sandbox, success criteria; Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"   },   "theme": {     "primary": "#000000",     "secondary": "#FFFFFF",     "accent": "#FF0000"   },   "sendsparkURL": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10" } as GTMPageConfig;
 
 export default function Page() {
-  const { company, challenges, icp, theme, loomUrl } = CONFIG;
+  const { company, challenges, icp, theme, sendsparkUrl } = CONFIG;
 
   const heroTextColor = pickTextFor(theme.primary);
-  const gradient = `linear-gradient(135deg, ${theme.primary}, ${theme.secondary}, ${theme.accent})`;
+  const gradient = `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`;
   const calUrl = "[https://calendly.com/checkaipulse/30min](https://calendly.com/checkaipulse/30min)";
 
   const heroStyle: React.CSSProperties = { background: gradient, color: heroTextColor };
@@ -167,8 +113,8 @@ export default function Page() {
           )}
 
           <div className="rounded-2xl p-8 max-w-4xl mx-auto mb-12" style={overlay25}>
-            {loomUrl ? (
-              <a href={loomUrl} target="_blank" rel="noopener noreferrer" className="block">
+            {sendsparkUrl ? (
+              <a href={lsendsparkUrl} target="_blank" rel="noopener noreferrer" className="block">
                 <div className="aspect-video rounded-xl flex items-center justify-center shadow-2xl" style={overlay20}>
                   <div className="text-center">
                     <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={overlayWhite30}>
@@ -373,7 +319,7 @@ export default function Page() {
               style={{ backgroundColor: '#0077B5', color: 'white' }}
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.46c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.46c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0_H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
               Connect on LinkedIn
             </button>
