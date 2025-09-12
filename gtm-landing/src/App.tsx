@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "CrowdStrike",
-    "role": "GTM Technology Operations Director (Remote)"
+    "name": "Empowerly",
+    "role": "Senior Go To Market (GTM) Financial Analyst"
   },
   "challenges": [
     {
-      "title": "Streamlining GTM Technology Operations for Scalability",
+      "title": "Optimizing Marketing Campaigns for Maximum ROI",
       "approach": [
-        "Designing scalable GTM architecture and playbooks",
-        "Implementing AI-first execution across channels",
-        "Ensuring forecast accuracy and pipeline hygiene"
+        "Craft persona-based dynamic copy for higher conversion rates",
+        "Implement trigger-based sequencing to improve reply rates",
+        "Utilize AI-driven voice cycles for increased meeting-to-client conversion rates"
       ]
     },
     {
-      "title": "Identifying and Resolving Process Inefficiencies",
+      "title": "Scaling Revenue Growth by 150–200%",
       "approach": [
-        "Implementing frameworks like MEDDPICC and TAS",
-        "Lifting reply rates from 2% to 23% through trigger-based sequencing",
-        "Orchestrating GTM workflows for lead hygiene and visibility"
+        "Built and deployed a complete GTM stack that created $1.2M in qualified pipeline in 4 months",
+        "Designed agentic revenue systems to increase meetings by 6x",
+        "Applied role- and vertical-specific intros to raise SQL rate from 22% to 33%"
       ]
     },
     {
-      "title": "Driving Revenue Growth Through Operational Excellence",
+      "title": "Transitioning from Performance Marketing to Data-Informed Revenue Engine",
       "approach": [
-        "Deploying AI-driven voice cycles for high conversion rates",
-        "Creating scaled personalization systems for increased reply rates",
-        "Designing and executing fast POC cycles for ROI"
+        "Orchestrated GTM workflows across multiple platforms for lead hygiene and visibility",
+        "Established guardrails to keep spam complaints under 0.08%",
+        "Monitored reorder cadence as a KPI proxy for customer health"
       ]
     }
   ],
@@ -85,34 +85,42 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
+    "31% reply-to-meeting conversion (up from 14%)",
     "$1.2M in qualified pipeline in 4 months",
-    "2% to 23% reply rate increase",
-    "14% to 31% reply-to-meeting conversion"
+    "150–200% revenue growth"
   ],
   "icp": {
     "demographics": [
-      "Enterprise cybersecurity leader focusing on stopping breaches with cloud-native platform"
+      "Mid-market, dual B2C/B2B2B ed-tech: parents of high school students (B2C) and K–12/college counseling leaders with procurement and IT/security oversight (B2B2B); founder-led, Series A–C; remote-first; aiming for 150–200%+ growth."
     ],
     "messagePillars": [
-      "Risk reduction and compliance",
-      "Scalability and reliability",
+      "Speed to value and time to first outcome",
+      "Personalization and AI leverage",
       "Integration fit and data quality"
     ],
     "channelFocus": [
-      "Outbound POC to prove value fast",
-      "ABM with executive outreach"
+      "Inbound conversion lift on high-intent pages and trials",
+      "Partner co-sell and marketplace attach",
+      "Outbound POC to prove value fast"
     ],
     "riskMitigation": [
-      "Legal or compliance objections",
-      "Data access and integration risk"
+      "Legal or compliance objections → pre-approved language, opt-out rules, QA",
+      "Data access and integration risk → scoped POC, sandbox, success criteria",
+      "Adoption risk → manager-first enablement, default templates, usage goals"
     ]
+    ,
+    "theme": {
+      "primary": "#101B6E",
+      "secondary": "#FFFFFF",
+      "accent": "#001242"
+    }
   },
   "theme": {
-    "primary": "#FC0000",
-    "secondary": "#292929",
-    "accent": "#FFFFFF"
+    "primary": "#101B6E",
+    "secondary": "#FFFFFF",
+    "accent": "#001242"
   },
-  "sendsparkUrl": "https://sendspark.com/share/rcgn52z134f5wx7xlmbi33pon0tvu829"
+  "sendsparkUrl": "https://sendspark.com/share/s8q6n24ah32d4ib2dhf4i5bp0nv6e7ao"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
