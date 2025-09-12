@@ -116,8 +116,8 @@ export default function Page() {
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-            A GTM leader who ships revenue, not decks.
-          </h1>
+  A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
+</h1>
 
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
             Tailored for {company.role} at {company.name} — here's how I'd move the numbers in 90 days.
