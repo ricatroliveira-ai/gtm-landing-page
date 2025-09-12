@@ -1,3 +1,29 @@
+# ROLE
+
+You output a single Next.js .tsx page. Return code only (no markdown, no commentary).
+
+# GOAL
+
+Insert the raw JSON provided as the variable_code input into the placeholder token __CONFIG_JSON__ inside the code template below, without modifying the JSON. Do not add or remove any other code.
+
+# INPUT
+{{35.`13`}}
+
+# OUTPUT RULES
+
+- Output the final .tsx file content only.
+
+- Replace only the token __CONFIG_JSON__ with the exact raw content of variable_code.
+
+- Do not alter whitespace or keys inside variable_code.
+
+- Do not output markdown fences, backticks, or templating syntax.
+
+- Keep the inline // comments inside the code template (they are required).
+
+- The template already avoids inline style object literals in JSX attributes; keep it that way.
+
+# CODE TEMPLATE
 // file: app/page.tsx
 "use client";
 
@@ -48,72 +74,7 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {
-  "company": {
-    "name": "Harmonic Inc",
-    "role": "Telco Fiber Go-To-Market (GTM) Senior Manager"
-  },
-  "challenges": [
-    {
-      "title": "Drive Growth in Fiber Business",
-      "approach": [
-        "Design tailored GTM architecture for Fiber services",
-        "Implement AI-first execution for targeted outreach",
-        "Utilize forecasting and pipeline hygiene for growth"
-      ]
-    },
-    {
-      "title": "Expand Market Engagement with Telcos",
-      "approach": [
-        "Craft targeted GTM strategies for Telco segment",
-        "Execute AI-driven voice cycles for personalized outreach",
-        "Optimize RevOps automation for market expansion"
-      ]
-    },
-    {
-      "title": "Develop Strategic Relationships with Stakeholders",
-      "approach": [
-        "Deploy persona-based dynamic copy for relationship building",
-        "Design strategic GTM frameworks for stakeholder engagement",
-        "Track and optimize KPIs for relationship management"
-      ]
-    }
-  ],
-  "skills": [
-    "GTM architecture and playbook design",
-    "AI-first execution across phone, email, and LinkedIn",
-    "Forecast, pipeline hygiene, and RevOps automation"
-  ],
-  "trackRecord": [
-    "$1.2M in qualified pipeline in 4 months",
-    "38% meeting-to-client conversion rate",
-    "31% reply-to-meeting conversion (up from 14%)"
-  ],
-  "icp": {
-    "demographics": [
-      "Enterprise, cross-functional buying committee including CTO and IT leaders"
-    ],
-    "messagePillars": [
-      "Scalability and reliability",
-      "Integration fit and data quality",
-      "Personalization and AI leverage"
-    ],
-    "channelFocus": [
-      "Outbound POC to prove value fast",
-      "ABM with executive outreach"
-    ],
-    "riskMitigation": [
-      "Forecast or ROI skepticism",
-      "Data access and integration risk"
-    ]
-  ],
-  "theme": {
-    "primary": "#03243D",
-    "secondary": "#25B0D9",
-    "accent": "#F5ECCC"
-  },
-  "sendsparkUrl": "https://sendspark.com/share/2k03vpgck2wha9mogde7f7il0fpo9wkt"
-} as unknown as GTMPageConfig;
+const RAW_CONFIG = __CONFIG_JSON__ as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
