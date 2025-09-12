@@ -1,29 +1,3 @@
-# ROLE
-
-You output a single Next.js .tsx page. Return code only (no markdown, no commentary).
-
-# GOAL
-
-Insert the raw JSON provided as the variable_code input into the placeholder token __CONFIG_JSON__ inside the code template below, without modifying the JSON. Do not add or remove any other code.
-
-# INPUT
-{{35.`13`}}
-
-# OUTPUT RULES
-
-- Output the final .tsx file content only.
-
-- Replace only the token __CONFIG_JSON__ with the exact raw content of variable_code.
-
-- Do not alter whitespace or keys inside variable_code.
-
-- Do not output markdown fences, backticks, or templating syntax.
-
-- Keep the inline // comments inside the code template (they are required).
-
-- The template already avoids inline style object literals in JSX attributes; keep it that way.
-
-# CODE TEMPLATE
 // file: app/page.tsx
 "use client";
 
@@ -74,7 +48,74 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = __CONFIG_JSON__ as unknown as GTMPageConfig;
+const RAW_CONFIG = {
+  "company": {
+    "name": "Intapp",
+    "role": "Sr Director, GTM Transformation"
+  },
+  "challenges": [
+    {
+      "title": "Drive GTM Transformation to Scale",
+      "approach": [
+        "Design GTM architecture and playbook for scalability",
+        "Apply AI-first execution across phone, email, and LinkedIn",
+        "Implement forecast, pipeline hygiene, and RevOps automation"
+      ]
+    },
+    {
+      "title": "Enhance Collaboration Across Cross-Functional Teams",
+      "approach": [
+        "Orchestrate GTM workflows across multiple tools for enhanced collaboration",
+        "Deploy persona-based dynamic copy to increase alignment",
+        "Run fast POC cycles with AI agents to promote cross-functional teamwork"
+      ]
+    },
+    {
+      "title": "Optimize GTM Strategy for Revenue Growth",
+      "approach": [
+        "Apply frameworks like MEDDPICC, TAS, and QBS for structured forecasting",
+        "Utilize AI-driven voice cycles with variable inserts for high conversion rates",
+        "Monitor and optimize KPIs for improved revenue predictability"
+      ]
+    }
+  ],
+  "skills": [
+    "GTM architecture and playbook design",
+    "AI-first execution across phone, email, and LinkedIn",
+    "Forecast, pipeline hygiene, and RevOps automation"
+  ],
+  "trackRecord": [
+    "$1.2M in qualified pipeline in 4 months",
+    "31% reply-to-meeting conversion (up from 14%)",
+    "38% meeting-to-client conversion rate"
+  ],
+  "icp": {
+    "demographics": [
+      "Enterprise",
+      "professional and financial services firms",
+      "SaaS provider"
+    ],
+    "messagePillars": [
+      "Integration fit and data quality",
+      "Scalability and reliability",
+      "Personalization and AI leverage"
+    ],
+    "channelFocus": [
+      "Partner co-sell and marketplace attach",
+      "Field events for regulated or enterprise buyers"
+    ],
+    "riskMitigation": [
+      "Data access and integration risk",
+      "Adoption risk"
+    ]
+  },
+  "theme": {
+    "primary": "#324655",
+    "secondary": "#54C1AC",
+    "accent": "#9DD0C3"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/r9i8a2oux98qlimxslnbarcsg9lwmbwm"
+} as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
