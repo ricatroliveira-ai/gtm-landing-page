@@ -37,8 +37,8 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(4, 6), 16);
-  const b = parseInt(hex.substring(6, 8), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
 }
@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Adobe",
-    "role": "Sr. Channel GTM Product Marketing Manager"
+    "name": "Alkami Technology",
+    "role": "Sr Director, Product Management (GTM)"
   },
   "challenges": [
     {
-      "title": "Drive Growth in Higher Education Channel",
+      "title": "Standardize GTM Processes for Efficiency",
       "approach": [
-        "Craft persona-based dynamic copy for education segment",
-        "Implement trigger-based sequencing for higher education leads",
-        "Operationalize repeatable outbound motions for education audience"
+        "Design scalable GTM architecture and playbook",
+        "Implement trigger-based sequencing for efficiency",
+        "Deploy AI-first execution across phone, email, and LinkedIn"
       ]
     },
     {
-      "title": "Optimize Channel Reach and Impact",
+      "title": "Enhance Pricing Governance and Sales Enablement",
       "approach": [
-        "Designed agentic revenue systems to capture and route signals efficiently",
-        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
-        "Deployed persona-based dynamic copy for personalized outreach"
+        "Establish guardrails for pricing governance and sales enablement",
+        "Ensure pricing and sales processes have RevOps automation",
+        "Utilize AI agents for pricing signals and routing"
       ]
     },
     {
-      "title": "Accelerate Growth Through Field Execution",
+      "title": "Improve Cross-Functional Alignment and Transparency",
       "approach": [
-        "Applied role- and vertical-specific intros to raise SQL rate",
-        "Built ICPs and sequenced outreach for structured forecasting",
-        "Lifted meetings per week from 1 to 6 through GTM architecture"
+        "Orchestrate GTM workflows across multiple tools for visibility",
+        "Deliver operator-grade dashboards for cross-functional alignment",
+        "Track and optimize KPIs across departments for transparency"
       ]
     }
   ],
@@ -85,36 +85,35 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "14% to 31% reply-to-meeting conversion",
+    "$1.2M in qualified pipeline in 4 months",
     "0.08% spam complaints",
     "0.9% unsubscribe rate",
-    "1 to 6 meetings per week"
+    "6x increase in meetings"
   ],
   "icp": {
     "demographics": [
-      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
+      "Upper mid-market, Fintech/Payments, high-growth and culture-focused"
     ],
     "messagePillars": [
       "Scalability and reliability",
-      "Integration fit and data quality",
-      "Revenue efficiency"
+      "Personalization and AI leverage",
+      "Speed to value and time to first outcome"
     ],
     "channelFocus": [
-      "Partner co-sell and marketplace attach",
-      "ABM with executive outreach"
+      "Outbound POC to prove value fast",
+      "Partner co-sell and marketplace attach"
     ],
     "riskMitigation": [
-      "Adoption risk → manager-first enablement, default templates, usage goals",
-      "Data access and integration risk → scoped POC, sandbox, success criteria",
-      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
+      "Data access and integration risk",
+      "Forecast or ROI skepticism"
     ]
-  ],
-  "theme": {
-    "primary": "#000000",
-    "secondary": "#FF0000",
-    "accent": "#0500CB"
   },
-  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
+  "theme": {
+    "primary": "#8B8447",
+    "secondary": "#BAA769",
+    "accent": "#47648B"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/jscpyrqr6capxz2vfkezuaq6asz5eevq"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
