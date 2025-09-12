@@ -48,7 +48,73 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {   "company": {     "name": "Restaurant365",     "role": "Senior FP&A Manager (GTM)"   },   "challenges": [     {       "title": "Optimizing Sales Productivity and Marketing ROI",       "approach": [         "Implement GTM architecture and playbook design",         "Execute AI-first strategies for phone, email, and LinkedIn",         "Utilize forecasting, pipeline hygiene, and RevOps automation"       ]     },     {       "title": "Becoming the Go-To Expert on GTM KPIs",       "approach": [         "Build GTM strategies tied to specific KPIs",         "Implement AI-driven GTM systems for data-driven decisions",         "Track and optimize KPIs across the revenue cycle"       ]     },     {       "title": "Delivering Mission-Critical Reporting with Precision",       "approach": [         "Create AI-driven reporting systems for precision",         "Utilize trigger-based sequencing for timely insights",         "Implement frameworks to improve reporting accuracy"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "6x increase in meetings per week",     "1 to 6 meetings per week",     "$431K in early pipeline"   ],   "icp": {     "demographics": [       "SMB restaurant management software, targeting restaurant owners, CFO, Ops Manager"     ],     "messagePillars": [       "Revenue efficiency",       "Integration fit and data quality",       "Speed to value and time to first outcome"     ],     "channelFocus": [       "Outbound POC to prove value fast",       "Partner co-sell and marketplace attach"     ],     "riskMitigation": [       "Adoption risk",       "Forecast or ROI skepticism"     ]   },   "theme": {     "primary": "#D02027",     "secondary": "#700000",     "accent": "#D02027"   },   "sendsparkUrl": "https://sendspark.com/share/c3k1n91chvnpndksc4mohe6jc0ldfdyo" } as unknown as GTMPageConfig;
+const RAW_CONFIG = {
+  "company": {
+    "name": "Alkami Technology",
+    "role": "Sr Director, Product Management (GTM)"
+  },
+  "challenges": [
+    {
+      "title": "Standardize GTM Processes for Efficiency",
+      "approach": [
+        "Design scalable GTM architecture and playbook",
+        "Implement trigger-based sequencing for efficiency",
+        "Deploy AI-first execution across phone, email, and LinkedIn"
+      ]
+    },
+    {
+      "title": "Enhance Pricing Governance and Sales Enablement",
+      "approach": [
+        "Establish guardrails for pricing governance and sales enablement",
+        "Ensure pricing and sales processes have RevOps automation",
+        "Utilize AI agents for pricing signals and routing"
+      ]
+    },
+    {
+      "title": "Improve Cross-Functional Alignment and Transparency",
+      "approach": [
+        "Orchestrate GTM workflows across multiple tools for visibility",
+        "Deliver operator-grade dashboards for cross-functional alignment",
+        "Track and optimize KPIs across departments for transparency"
+      ]
+    }
+  ],
+  "skills": [
+    "GTM architecture and playbook design",
+    "AI-first execution across phone, email, and LinkedIn",
+    "Forecast, pipeline hygiene, and RevOps automation"
+  ],
+  "trackRecord": [
+    "$1.2M in qualified pipeline in 4 months",
+    "0.08% spam complaints",
+    "0.9% unsubscribe rate",
+    "6x increase in meetings"
+  ],
+  "icp": {
+    "demographics": [
+      "Upper mid-market, Fintech/Payments, high-growth and culture-focused"
+    ],
+    "messagePillars": [
+      "Scalability and reliability",
+      "Personalization and AI leverage",
+      "Speed to value and time to first outcome"
+    ],
+    "channelFocus": [
+      "Outbound POC to prove value fast",
+      "Partner co-sell and marketplace attach"
+    ],
+    "riskMitigation": [
+      "Data access and integration risk",
+      "Forecast or ROI skepticism"
+    ]
+  },
+  "theme": {
+    "primary": "#8B8447",
+    "secondary": "#BAA769",
+    "accent": "#47648B"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/jscpyrqr6capxz2vfkezuaq6asz5eevq"
+} as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
@@ -194,8 +260,7 @@ export default function Page() {
           <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
             The Real Reason You're Hiring This Role
           </h2>
-          
-       <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
+          <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
   It's not just about finding a GTM leader. You need someone who can solve{" "}
   <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
   <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
@@ -384,4 +449,3 @@ export default function Page() {
     </div>
   );
 }
-
