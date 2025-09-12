@@ -48,71 +48,7 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {
-  "company": {
-    "name": "Splunk",
-    "role": "Leader, Global Platform Specialists, GTM Strategy & Programs"
-  },
-  "challenges": [
-    {
-      "title": "Developing Long-Term Platform GTM Strategy",
-      "approach": [
-        "Design GTM architecture and playbook for platform expansion",
-        "Implement AI-first execution across multiple channels",
-        "Focus on forecasting and pipeline hygiene for long-term success"
-      ]
-    },
-    {
-      "title": "Driving Synergy with Cisco's Sales Force",
-      "approach": [
-        "Develop joint GTM strategies for synergy with Cisco",
-        "Implement AI-driven voice cycles for effective collaboration",
-        "Enhance RevOps automation for streamlined processes"
-      ]
-    },
-    {
-      "title": "Scaling Growth Through Joint GTM Strategies",
-      "approach": [
-        "Operationalize repeatable outbound motions to increase meetings per week",
-        "Establish guardrails for increased efficiency and reduced opt-outs",
-        "Deliver operator-grade visibility through dashboards and playbooks"
-      ]
-    }
-  ],
-  "skills": [
-    "GTM architecture and playbook design",
-    "AI-first execution across phone, email, and LinkedIn",
-    "Forecast, pipeline hygiene, and RevOps automation"
-  ],
-  "trackRecord": [
-    "38% meeting-to-client conversion rate sustained",
-    "$431K in early pipeline generated"
-  ],
-  "icp": {
-    "demographics": [
-      "Enterprise, across security, IT, and engineering functions"
-    ],
-    "messagePillars": [
-      "Risk reduction and compliance",
-      "Scalability and reliability",
-      "Integration fit and data quality"
-    ],
-    "channelFocus": [
-      "ABM with executive outreach",
-      "Partner co-sell and marketplace attach"
-    ],
-    "riskMitigation": [
-      "Legal or compliance objections",
-      "Data access and integration risk"
-    ]
-  },
-  "theme": {
-    "primary": "#ED0080",
-    "secondary": "#F16122",
-    "accent": "#F99E1C"
-  },
-  "sendsparkUrl": "https://sendspark.com/share/mr0cs3yt1hw20x5khyfbr45p60fyg2vs"
-} as unknown as GTMPageConfig;
+const RAW_CONFIG = {   "company": {     "name": "CrowdStrike",     "role": "GTM Technology Operations Director (Remote)"   },   "challenges": [     {       "title": "Streamlining GTM Technology Operations for Scalability",       "approach": [         "Designing scalable GTM architecture and playbooks",         "Implementing AI-first execution across channels",         "Ensuring forecast accuracy and pipeline hygiene"       ]     },     {       "title": "Identifying and Resolving Process Inefficiencies",       "approach": [         "Implementing frameworks like MEDDPICC and TAS",         "Lifting reply rates from 2% to 23% through trigger-based sequencing",         "Orchestrating GTM workflows for lead hygiene and visibility"       ]     },     {       "title": "Driving Revenue Growth Through Operational Excellence",       "approach": [         "Deploying AI-driven voice cycles for high conversion rates",         "Creating scaled personalization systems for increased reply rates",         "Designing and executing fast POC cycles for ROI"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "$1.2M in qualified pipeline in 4 months",     "2% to 23% reply rate increase",     "14% to 31% reply-to-meeting conversion"   ],   "icp": {     "demographics": [       "Enterprise cybersecurity leader focusing on stopping breaches with cloud-native platform"     ],     "messagePillars": [       "Risk reduction and compliance",       "Scalability and reliability",       "Integration fit and data quality"     ],     "channelFocus": [       "Outbound POC to prove value fast",       "ABM with executive outreach"     ],     "riskMitigation": [       "Legal or compliance objections",       "Data access and integration risk"     ]   },   "theme": {     "primary": "#FC0000",     "secondary": "#292929",     "accent": "#FFFFFF"   },   "sendsparkUrl": "https://sendspark.com/share/rcgn52z134f5wx7xlmbi33pon0tvu829" } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
@@ -178,7 +114,7 @@ export default function Page() {
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-  A GTM leader who ships revenue, not decks.
+  A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
 </h1>
 
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
