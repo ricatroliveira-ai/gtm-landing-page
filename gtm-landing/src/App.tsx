@@ -1,337 +1,329 @@
 // file: src/App.tsx
 import React from "react";
 import {
-  Calendar,
-  ExternalLink,
-  TrendingUp,
-  Users,
-  Target,
-  ArrowRight,
-  BarChart3,
-  DollarSign,
-  Bot,
-  Webhook,
-  Timer,
-  Settings,
-  Lock,
-  Mic
+Calendar,
+ExternalLink,
+TrendingUp,
+Users,
+Target,
+ArrowRight,
+BarChart3,
+DollarSign,
+Bot,
+Webhook,
+Timer,
+Settings,
+Lock,
+Mic
 } from "lucide-react";
 
 export type GTMPageConfig = {
-  company: { name: string; role: string; logoUrl?: string };
-  challenges: { title: string; approach: string[] }[];
-  skills: string[];
-  trackRecord: string[];
-  icp: {
-    demographics: string[];
-    messagePillars: string[];
-    channelFocus: string[];
-    riskMitigation: string[];
-  };
-  theme: { primary: string; secondary: string; accent: string };
-  sendsparkUrl: string;
+company: { name: string; role: string; logoUrl?: string };
+challenges: { title: string; approach: string\[] }\[];
+skills: string\[];
+trackRecord: string\[];
+icp: {
+demographics: string\[];
+messagePillars: string\[];
+channelFocus: string\[];
+riskMitigation: string\[];
+};
+theme: { primary: string; secondary: string; accent: string };
+sendsparkUrl: string;
 };
 
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
-  const hex = bgHex.replace("#", "");
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
-  const yiq = (r * 299 + g * 587 + b * 114) / 1000;
-  return yiq >= 128 ? "#000000" : "#FFFFFF";
+const hex = bgHex.replace("#", "");
+const r = parseInt(hex.substring(0, 2), 16);
+const g = parseInt(hex.substring(2, 4), 16);
+const b = parseInt(hex.substring(4, 6), 16);
+const yiq = (r \* 299 + g \* 587 + b \* 114) / 1000;
+return yiq >= 128 ? "#000000" : "#FFFFFF";
 }
 
-const toList = (v: string | string[] | undefined): string[] =>
-  Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
+const toList = (v: string | string\[] | undefined): string\[] =>
+Array.isArray(v) ? v : (typeof v === "string" ? v.split(/\[\n;]+/).map(s => s.trim()).filter(Boolean) : \[]);
 
-const RAW_CONFIG = {   "company": {     "name": "Adobe",     "role": "Sr. Channel GTM Product Marketing Manager"   },   "challenges": [     {       "title": "Drive Growth in Higher Education Channel",       "approach": [         "Craft persona-based dynamic copy for education segment",         "Implement trigger-based sequencing for higher education leads",         "Operationalize repeatable outbound motions for education audience"       ]     },     {       "title": "Optimize Channel Reach and Impact",       "approach": [         "Designed agentic revenue systems to capture and route signals efficiently",         "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",         "Deployed persona-based dynamic copy for personalized outreach"       ]     },     {       "title": "Accelerate Growth Through Field Execution",       "approach": [         "Applied role- and vertical-specific intros to raise SQL rate",         "Built ICPs and sequenced outreach for structured forecasting",         "Lifted meetings per week from 1 to 6 through GTM architecture"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "31% reply-to-meeting conversion (up from 14%)",     "6x increase in meetings",     "0.08% spam complaint rate",     "0.9% unsubscribe rate"   ],   "icp": {     "demographics": [       "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."     ],     "messagePillars": [       "Scalability and reliability",       "Integration fit and data quality",       "Revenue efficiency"     ],     "channelFocus": [       "Partner co-sell and marketplace attach",       "ABM with executive outreach"     ],     "riskMitigation": [       "Adoption risk → manager-first enablement, default templates, usage goals",       "Data access and integration risk → scoped POC, sandbox, success criteria",       "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"     ]   },   "theme": {     "primary": "#000000",     "secondary": "#FFFFFF",     "accent": "#FF0000"   },   "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10" } as unknown as GTMPageConfig;
+const RAW\_CONFIG = {   "company": {     "name": "Adobe",     "role": "Sr. Channel GTM Product Marketing Manager"   },   "challenges": [     {       "title": "Drive Growth in Higher Education Channel",       "approach": [         "Craft persona-based dynamic copy for education segment",         "Implement trigger-based sequencing for higher education leads",         "Operationalize repeatable outbound motions for education audience"       ]     },     {       "title": "Optimize Channel Reach and Impact",       "approach": [         "Designed agentic revenue systems to capture and route signals efficiently",         "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",         "Deployed persona-based dynamic copy for personalized outreach"       ]     },     {       "title": "Accelerate Growth Through Field Execution",       "approach": [         "Applied role- and vertical-specific intros to raise SQL rate",         "Built ICPs and sequenced outreach for structured forecasting",         "Lifted meetings per week from 1 to 6 through GTM architecture"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "31% reply-to-meeting conversion (up from 14%)",     "6x increase in meetings",     "0.08% spam complaint rate",     "0.9% unsubscribe rate"   ],   "icp": {     "demographics": [       "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."     ],     "messagePillars": [       "Scalability and reliability",       "Integration fit and data quality",       "Revenue efficiency"     ],     "channelFocus": [       "Partner co-sell and marketplace attach",       "ABM with executive outreach"     ],     "riskMitigation": [       "Adoption risk → manager-first enablement, default templates, usage goals",       "Data access and integration risk → scoped POC, sandbox, success criteria",       "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"     ]   },   "theme": {     "primary": "#000000",     "secondary": "#FFFFFF",     "accent": "#FF0000"   },   "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10" } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
-  ...RAW_CONFIG,
-  icp: {
-    demographics: toList((RAW_CONFIG as any)?.icp?.demographics),
-    messagePillars: toList((RAW_CONFIG as any)?.icp?.messagePillars),
-    channelFocus: toList((RAW_CONFIG as any)?.icp?.channelFocus),
-    riskMitigation: toList((RAW_CONFIG as any)?.icp?.riskMitigation)
-  }
+...RAW\_CONFIG,
+icp: {
+demographics: toList((RAW\_CONFIG as any)?.icp?.demographics),
+messagePillars: toList((RAW\_CONFIG as any)?.icp?.messagePillars),
+channelFocus: toList((RAW\_CONFIG as any)?.icp?.channelFocus),
+riskMitigation: toList((RAW\_CONFIG as any)?.icp?.riskMitigation)
+}
 } as GTMPageConfig;
 
 export default function App() {
-  const { company, challenges, icp, theme, sendsparkUrl } = CONFIG;
+const { company, challenges, icp, theme, sendsparkUrl } = CONFIG;
 
-  const heroTextColor = pickTextFor(theme.primary);
-  const gradient = `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`;
-  const calUrl = "https://calendly.com/checkaipulse/30min";
+const heroTextColor = pickTextFor(theme.primary);
+const gradient = `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`;
+const calUrl = "[https://calendly.com/checkaipulse/30min](https://calendly.com/checkaipulse/30min)";
 
-  const heroStyle: React.CSSProperties = { background: gradient, color: heroTextColor };
-  const heroTextStyle: React.CSSProperties = { color: heroTextColor };
-  const whiteBtn: React.CSSProperties = {
-    background: "#ffffff",
-    color: "#000000",
-    padding: "1rem 2rem",
-    borderRadius: "9999px",
-    fontWeight: 700
-  };
+const heroStyle: React.CSSProperties = { background: gradient, color: heroTextColor };
+const heroTextStyle: React.CSSProperties = { color: heroTextColor };
+const whiteBtn: React.CSSProperties = {
+background: "#ffffff",
+color: "#000000",
+padding: "1rem 2rem",
+borderRadius: "9999px",
+fontWeight: 700
+};
 
-  const overlay25: React.CSSProperties = { background: "rgba(0,0,0,0.25)" };
-  const overlay20: React.CSSProperties = { background: "rgba(0,0,0,0.2)" };
+const overlay25: React.CSSProperties = { background: "rgba(0,0,0,0.25)" };
+const overlay20: React.CSSProperties = { background: "rgba(0,0,0,0.2)" };
 
-  const lightBg: React.CSSProperties = { background: "#FFF7F3" };
-  const textNearBlack: React.CSSProperties = { color: "#0F172A" };
-  const textBlack: React.CSSProperties = { color: "#0A0A0A" };
-  const textSlate70: React.CSSProperties = { color: "rgba(15,23,42,0.7)" };
-  const textSlate85: React.CSSProperties = { color: "rgba(15,23,42,0.85)" };
-  const textSlate90: React.CSSProperties = { color: "rgba(15,23,42,0.9)" };
+const textNearBlack: React.CSSProperties = { color: "#0F172A" };
+const textSlate70: React.CSSProperties = { color: "rgba(15,23,42,0.7)" };
+const textSlate85: React.CSSProperties = { color: "rgba(15,23,42,0.85)" };
+const textSlate90: React.CSSProperties = { color: "rgba(15,23,42,0.9)" };
 
-  const primaryColorStyle: React.CSSProperties = { color: theme.primary };
-  const primaryBgStyle: React.CSSProperties = { background: theme.primary, color: pickTextFor(theme.primary) };
-  const challengeCardStyle: React.CSSProperties = {
-    borderLeft: `4px solid ${theme.primary}`,
-    background: "linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.00))",
-    borderRadius: "0.75rem",
-    padding: "2rem"
-  };
+const primaryColorStyle: React.CSSProperties = { color: theme.primary };
+const primaryBgStyle: React.CSSProperties = { background: theme.primary, color: pickTextFor(theme.primary) };
+const challengeCardStyle: React.CSSProperties = {
+borderLeft: `4px solid ${theme.primary}`,
+background: "linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.00))",
+borderRadius: "0.75rem",
+padding: "2rem"
+};
 
-  const secondaryBg: React.CSSProperties = { background: theme.secondary, color: pickTextFor(theme.secondary) };
-  const onSecondary: React.CSSProperties = { color: pickTextFor(theme.secondary) };
-  const white85: React.CSSProperties = { color: "rgba(255,255,255,0.85)" };
-  const darkCard: React.CSSProperties = { background: "#334155", borderRadius: "0.75rem", padding: "2rem" };
+const white85: React.CSSProperties = { color: "rgba(255,255,255,0.85)" };
 
-  const revenueSpanStyle: React.CSSProperties = {
-    color: theme.primary === "#FFFFFF" ? "#000" : "#fff",
-    mixBlendMode: "overlay"
-  };
+const accentColorStyle: React.CSSProperties = { color: theme.accent };
+const accentBgStyle: React.CSSProperties = { background: theme.accent, color: pickTextFor(theme.accent) };
+const onAccent: React.CSSProperties = { color: pickTextFor(theme.accent) };
+const whiteBg: React.CSSProperties = { background: "#FFFFFF" };
+const blackText: React.CSSProperties = { color: "#000000" };
+const planCard: React.CSSProperties = { background: "#FFFFFF", color: "#000000", borderRadius: "0.75rem", padding: "2rem" };
 
-  const accentColorStyle: React.CSSProperties = { color: theme.accent };
-  const accentBgStyle: React.CSSProperties = { background: theme.accent, color: pickTextFor(theme.accent) };
-  const whiteBg: React.CSSProperties = { background: "#FFFFFF" };
-  const blackText: React.CSSProperties = { color: "#000000" };
-  const planCard: React.CSSProperties = { background: "#FFFFFF", color: "#000000", borderRadius: "0.75rem", padding: "2rem" };
+const revenueSpanStyle: React.CSSProperties = {
+color: theme.primary === "#FFFFFF" ? "#000000" : "#FFFFFF",
+mixBlendMode: "overlay"
+};
 
-  return (
-    <div className="min-h-screen">
-      <section className="py-20 px-4 text-center" style={heroStyle}>
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-            A GTM leader who ships revenue, not decks.
-          </h1>
+return ( <div className="min-h-screen"> <section className="py-20 px-4 text-center" style={heroStyle}> <div className="max-w-6xl mx-auto"> <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
+A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks. </h1>
 
-          <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
-            Tailored for {company.role} at {company.name} - here is how I would move the numbers in 90 days.
-          </p>
+      <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
+        Tailored for {company.role} at {company.name} - here is how I would move the numbers in 90 days.
+      </p>
 
-          {company.logoUrl && (
-            <img src={company.logoUrl} alt={company.name + " logo"} className="h-10 mx-auto mb-6 opacity-90" />
-          )}
+      {company.logoUrl && (
+        <img src={company.logoUrl} alt={company.name + " logo"} className="h-10 mx-auto mb-6 opacity-90" />
+      )}
 
-          <div className="rounded-2xl p-8 max-w-4xl mx-auto mb-12" style={overlay25}>
-            {sendsparkUrl ? (
-              <div className="aspect-video rounded-xl shadow-2xl overflow-hidden">
-                <iframe
-                  src={sendsparkUrl.replace("/share/", "/embed/")}
-                  className="w-full h-full"
-                  frameBorder={0}
-                  title="Personal intro video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            ) : (
-              <div className="aspect-video rounded-xl flex items-center justify-center shadow-2xl" style={overlay20}>
-                <p className="font-medium text-lg" style={heroTextStyle}>Personal Video Message</p>
-              </div>
-            )}
+      <div className="rounded-2xl p-8 max-w-4xl mx-auto mb-12" style={overlay25}>
+        {sendsparkUrl ? (
+          <div className="aspect-video rounded-xl shadow-2xl overflow-hidden">
+            <iframe
+              src={sendsparkUrl.replace("/share/", "/embed/")}
+              className="w-full h-full"
+              frameBorder={0}
+              title="Personal intro video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
-
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => window.open(calUrl)}
-              style={whiteBtn}
-              className="flex items-center gap-3 text-lg font-bold shadow"
-            >
-              <Calendar className="w-5 h-5" />
-              Lets talk GTM? I am available
-            </button>
+        ) : (
+          <div className="aspect-video rounded-xl flex items-center justify-center shadow-2xl" style={overlay20}>
+            <p className="font-medium text-lg" style={heroTextStyle}>Personal Video Message</p>
           </div>
-        </div>
-      </section>
+        )}
+      </div>
 
-      <section className="py-20 px-4" style={whiteBg}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
-            The Numbers Speak For Themselves
-          </h2>
-          <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
-            Some Career Highlights
-          </h3>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
-              { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
-              { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
-              { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
-            ].map(({ Icon, stat, label, sub }, i) => (
-              <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
-                <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
-                <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
-                <div className="font-medium" style={primaryColorStyle}>{label}</div>
-                <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
-            The Real Reason You Are Hiring This Role
-          </h2>
-          <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-            It is not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
-            <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
-            <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
-            <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
-            <span className="block mt-2">Here is exactly how I would approach each.</span>
-          </p>
-
-          <div className="space-y-8">
-            {challenges.map((c, idx) => (
-              <div key={idx} style={challengeCardStyle}>
-                <div className="flex items-start gap-4">
-                  <div
-                    className="rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1"
-                    style={primaryBgStyle}
-                  >
-                    {(idx + 1).toString().padStart(2, "0")}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-3" style={accentColorStyle}>{c.title}</h3>
-                    <ul className="list-disc pl-6 space-y-1" style={textSlate90}>
-                      {c.approach.map((bullet, i) => <li key={i}>{bullet}</li>)}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4" style={accentBgStyle}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-black text-center mb-4" style={onSecondary}>30-60-90 Day Plan</h2>
-          <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium text-center" style={white85}>
-            The road to incrementing gains.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div style={planCard}>
-              <div className="text-6xl font-black mb-6" style={accentColorStyle}>30 days</div>
-              <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Foundation</h3>
-              <div className="space-y-3" style={blackText}>
-                <p className="flex items-center gap-2"><Users className="w-4 h-4" style={accentColorStyle} /> Revisit ICP and Identify Buying Triggers</p>
-                <p className="flex items-center gap-2"><BarChart3 className="w-4 h-4" style={accentColorStyle} /> Create 3 to 5 different playbooks</p>
-                <p className="flex items-center gap-2"><Target className="w-4 h-4" style={accentColorStyle} /> Run multichannel campaigns targeting companies with high intent as POC</p>
-                <p className="flex items-center gap-2"><Timer className="w-4 h-4" style={accentColorStyle} /> Track playbook results on dashboard</p>
-              </div>
-            </div>
-
-            <div style={planCard}>
-              <div className="text-6xl font-black mb-6" style={accentColorStyle}>60 days</div>
-              <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Scale</h3>
-              <div className="space-y-3" style={blackText}>
-                <p className="flex items-center gap-2"><TrendingUp className="w-4 h-4" style={accentColorStyle} /> Scale winning playbook and channel by going fully AI automated</p>
-                <p className="flex items-center gap-2"><Settings className="w-4 h-4" style={accentColorStyle} /> Improve and automate pipeline and CRM hygiene</p>
-                <p className="flex items-center gap-2"><Webhook className="w-4 h-4" style={accentColorStyle} /> Implement automated scoring and routing</p>
-              </div>
-            </div>
-
-            <div style={planCard}>
-              <div className="text-6xl font-black mb-6" style={accentColorStyle}>90 days</div>
-              <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Optimize</h3>
-              <div className="space-y-3" style={blackText}>
-                <p className="flex items-center gap-2"><Lock className="w-4 h-4" style={accentColorStyle} /> Lock forecast accuracy</p>
-                <p className="flex items-center gap-2"><Bot className="w-4 h-4" style={accentColorStyle} /> Automate admin work</p>
-                <p className="flex items-center gap-2"><ExternalLink className="w-4 h-4" style={accentColorStyle} /> Publish GTM SOP V1</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4" style={whiteBg}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black text-center" style={textNearBlack}>
-            My GTM Hypothesis
-            <span className="block">for {company.name}</span>
-          </h2>
-          <h3 className="text-xl font-medium text-center mt-2 mb-16" style={textSlate70}>
-            A quick brainstorm on starting points
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
-                <Target className="w-5 h-5" style={accentColorStyle} /> Researched ICP
-              </h3>
-              <ul className="list-disc pl-6 space-y-1" style={blackText}>
-                {icp.demographics.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
-                <Mic className="w-5 h-5" style={accentColorStyle} /> Message Pillars
-              </h3>
-              <ul className="list-disc pl-6 space-y-1" style={blackText}>
-                {icp.messagePillars.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
-                <Target className="w-5 h-5" style={accentColorStyle} /> Channel Focus
-              </h3>
-              <ul className="list-disc pl-6 space-y-1" style={blackText}>
-                {icp.channelFocus.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
-                <Lock className="w-5 h-5" style={accentColorStyle} /> Risks & Mitigations
-              </h3>
-              <ul className="list-disc pl-6 space-y-1" style={blackText}>
-                {icp.riskMitigation.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 text-center" style={heroStyle}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-black mb-6">Worth exploring how I could bring these results to {company.name}?</h2>
-          <p className="text-xl mb-12 font-medium">I am available to meet</p>
-          <button
-            onClick={() => window.open(calUrl)}
-            style={whiteBtn}
-            className="flex items-center gap-3 text-lg font-bold shadow mx-auto"
-          >
-            Book Your Strategy Session
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-      </section>
-
-      <footer className="py-8 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-sm opacity-80">
-            Contact: ricatroliveira@gmail.com • linkedin.com/in/ricatroliveira/ • Sao Paulo
-          </p>
-        </div>
-      </footer>
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={() => window.open(calUrl)}
+          style={whiteBtn}
+          className="flex items-center gap-3 text-lg font-bold shadow"
+        >
+          <Calendar className="w-5 h-5" />
+          Lets talk GTM? I am available
+        </button>
+      </div>
     </div>
-  );
+  </section>
+
+  <section className="py-20 px-4" style={whiteBg}>
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
+        The Numbers Speak For Themselves
+      </h2>
+      <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
+        Some Career Highlights
+      </h3>
+
+      <div className="grid md:grid-cols-4 gap-8">
+        {[
+          { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
+          { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
+          { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
+          { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
+        ].map(({ Icon, stat, label, sub }, i) => (
+          <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+            <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
+            <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
+            <div className="font-medium" style={primaryColorStyle}>{label}</div>
+            <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section className="py-20 px-4">
+    <div className="max-w-4xl mx-auto">
+      <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
+        The Real Reason You Are Hiring This Role
+      </h2>
+      <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
+        It is not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
+        <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
+        <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
+        <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
+        <span className="block mt-2">Here is exactly how I would approach each.</span>
+      </p>
+
+      <div className="space-y-8">
+        {challenges.map((c, idx) => (
+          <div key={idx} style={challengeCardStyle}>
+            <div className="flex items-start gap-4">
+              <div
+                className="rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1"
+                style={primaryBgStyle}
+              >
+                {(idx + 1).toString().padStart(2, "0")}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-3" style={accentColorStyle}>{c.title}</h3>
+                <ul className="list-disc pl-6 space-y-1" style={textSlate90}>
+                  {c.approach.map((bullet, i) => <li key={i}>{bullet}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section className="py-20 px-4" style={accentBgStyle}>
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-4xl font-black text-center mb-4" style={onAccent}>30-60-90 Day Plan</h2>
+      <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium text-center" style={white85}>
+        The road to incrementing gains.
+      </p>
+      <div className="grid md:grid-cols-3 gap-8">
+        <div style={planCard}>
+          <div className="text-6xl font-black mb-6" style={accentColorStyle}>30 days</div>
+          <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Foundation</h3>
+          <div className="space-y-3" style={blackText}>
+            <p className="flex items-center gap-2"><Users className="w-4 h-4" style={accentColorStyle} /> Revisit ICP and Identify Buying Triggers</p>
+            <p className="flex items-center gap-2"><BarChart3 className="w-4 h-4" style={accentColorStyle} /> Create 3 to 5 different playbooks</p>
+            <p className="flex items-center gap-2"><Target className="w-4 h-4" style={accentColorStyle} /> Run multichannel campaigns targeting companies with high intent as POC</p>
+            <p className="flex items-center gap-2"><Timer className="w-4 h-4" style={accentColorStyle} /> Track playbook results on dashboard</p>
+          </div>
+        </div>
+
+        <div style={planCard}>
+          <div className="text-6xl font-black mb-6" style={accentColorStyle}>60 days</div>
+          <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Scale</h3>
+          <div className="space-y-3" style={blackText}>
+            <p className="flex items-center gap-2"><TrendingUp className="w-4 h-4" style={accentColorStyle} /> Scale winning playbook and channel by going fully AI automated</p>
+            <p className="flex items-center gap-2"><Settings className="w-4 h-4" style={accentColorStyle} /> Improve and automate pipeline and CRM hygiene</p>
+            <p className="flex items-center gap-2"><Webhook className="w-4 h-4" style={accentColorStyle} /> Implement automated scoring and routing</p>
+          </div>
+        </div>
+
+        <div style={planCard}>
+          <div className="text-6xl font-black mb-6" style={accentColorStyle}>90 days</div>
+          <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Optimize</h3>
+          <div className="space-y-3" style={blackText}>
+            <p className="flex items-center gap-2"><Lock className="w-4 h-4" style={accentColorStyle} /> Lock forecast accuracy</p>
+            <p className="flex items-center gap-2"><Bot className="w-4 h-4" style={accentColorStyle} /> Automate admin work</p>
+            <p className="flex items-center gap-2"><ExternalLink className="w-4 h-4" style={accentColorStyle} /> Publish GTM SOP V1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section className="py-20 px-4" style={whiteBg}>
+    <div className="max-w-4xl mx-auto">
+      <h2 className="text-4xl font-black text-center" style={textNearBlack}>
+        My GTM Hypothesis
+        <span className="block">for {company.name}</span>
+      </h2>
+      <h3 className="text-xl font-medium text-center mt-2 mb-16" style={textSlate70}>
+        A quick brainstorm on starting points
+      </h3>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="bg-white p-8 rounded-xl shadow-sm">
+          <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
+            <Target className="w-5 h-5" style={accentColorStyle} /> Researched ICP
+          </h3>
+          <ul className="list-disc pl-6 space-y-1" style={blackText}>
+            {icp.demographics.map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
+
+        <div className="bg-white p-8 rounded-xl shadow-sm">
+          <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
+            <Mic className="w-5 h-5" style={accentColorStyle} /> Message Pillars
+          </h3>
+          <ul className="list-disc pl-6 space-y-1" style={blackText}>
+            {icp.messagePillars.map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
+
+        <div className="bg-white p-8 rounded-xl shadow-sm">
+          <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
+            <Target className="w-5 h-5" style={accentColorStyle} /> Channel Focus
+          </h3>
+          <ul className="list-disc pl-6 space-y-1" style={blackText}>
+            {icp.channelFocus.map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
+
+        <div className="bg-white p-8 rounded-xl shadow-sm">
+          <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
+            <Lock className="w-5 h-5" style={accentColorStyle} /> Risks & Mitigations
+          </h3>
+          <ul className="list-disc pl-6 space-y-1" style={blackText}>
+            {icp.riskMitigation.map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section className="py-20 px-4 text-center" style={heroStyle}>
+    <div className="max-w-4xl mx-auto">
+      <h2 className="text-4xl font-black mb-6">Worth exploring how I could bring these results to {company.name}?</h2>
+      <p className="text-xl mb-12 font-medium">I am available to meet</p>
+      <button
+        onClick={() => window.open(calUrl)}
+        style={whiteBtn}
+        className="flex items-center gap-3 text-lg font-bold shadow mx-auto"
+      >
+        Book Your Strategy Session
+        <ArrowRight className="w-5 h-5" />
+      </button>
+    </div>
+  </section>
+
+  <footer className="py-8 px-4 text-center">
+    <div className="max-w-4xl mx-auto">
+      <p className="text-sm opacity-80">
+        Contact: ricatroliveira@gmail.com • linkedin.com/in/ricatroliveira/ • Sao Paulo
+      </p>
+    </div>
+  </footer>
+</div>
+
+);
 }
