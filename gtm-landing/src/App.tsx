@@ -159,7 +159,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ============================== STATS ============================== 
+      {/* ============================== STATS ============================== */}
 {/* 2) White background; subheader+icons+stats in accent */}
 <section className="py-20 px-4" style={whiteBg}>
   <div className="max-w-6xl mx-auto">
@@ -187,7 +187,7 @@ export default function Page() {
     </div>
   </div>
 </section>
-============================== CHALLENGES ============================== */}
+{/*============================== CHALLENGES ============================== */}
       {/* 3) Accent highlight in sentence; card titles accent */}
       <section className="py-20 px-4 bg-background">
         <div className="max-w-4xl mx-auto">
