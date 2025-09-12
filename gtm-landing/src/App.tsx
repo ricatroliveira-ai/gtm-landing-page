@@ -48,7 +48,70 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {   "company": {     "name": "Lyra Health",     "role": "Sr. Salesforce Developer - GTM"   },   "challenges": [     {       "title": "Improving Sales Processes Efficiency",       "approach": [         "Implement trigger-based sequencing to increase reply rates",         "Optimize GTM workflows using automation tools like Apollo and RapidAPI",         "Utilize cold calling frameworks to boost pick up rates"       ]     },     {       "title": "Scaling Salesforce Instances for Growth",       "approach": [         "Design and deploy a comprehensive GTM stack",         "Create agentic revenue systems for lead scoring and routing",         "Utilize AI-driven voice cycles for higher conversion rates"       ]     },     {       "title": "Enhancing User Experience and Security",       "approach": [         "Apply GTM architecture and playbook design to standardize user flows",         "Use AI-first execution across phone, email, and LinkedIn to streamline secure communications",         "Implement forecast, pipeline hygiene, and RevOps automation to enforce access policies"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "23% reply rate",     "2% to 23% reply rate",     "$1.2M qualified pipeline",     "4 months to $1.2M qualified pipeline"   ],   "icp": {     "demographics": [       "Upper mid-market, mental health industry, with a focus on improving outcomes"     ],     "messagePillars": [       "Speed to value and time to first outcome",       "Scalability and reliability",       "Integration fit and data quality"     ],     "channelFocus": [       "Outbound POC to prove value fast",       "Partner co-sell and marketplace attach"     ],     "riskMitigation": [       "Adoption risk - emphasizing the importance of practicing skills in everyday life",       "Forecast or ROI skepticism - providing clear success metrics and outcomes"     ]   },   "theme": {     "primary": "#133D54",     "secondary": "#017A8F",     "accent": "#017A8F"   },   "sendsparkUrl": "https://sendspark.com/share/gn9wk2uw17t6n8unulz3yh0m9jy97vho" } as unknown as GTMPageConfig;
+const RAW_CONFIG = {
+  "company": {
+    "name": "Medallia",
+    "role": "Senior Solutions Architect, Salesforce & GTM Apps"
+  },
+  "challenges": [
+    {
+      "title": "Enhancing Salesforce Ecosystem for Scalability",
+      "approach": [
+        "Design tailored GTM architecture and playbook",
+        "Implement AI-first execution across multiple channels",
+        "Ensure forecast accuracy and pipeline hygiene"
+      ]
+    },
+    {
+      "title": "Optimizing Business Process Efficiency and Accuracy",
+      "approach": [
+        "Implement RevOps automation for process optimization",
+        "Apply frameworks for structured forecasting and qualification",
+        "Utilize AI agents for revenue signal capture and routing"
+      ]
+    },
+    {
+      "title": "Streamlining Integrations for Unified Customer Data",
+      "approach": [
+        "Design GTM architecture for unified data",
+        "Implement RevOps automation to enforce pipeline hygiene across integrations",
+        "Leverage AI-first execution to reconcile phone, email, and LinkedIn signals"
+      ]
+    }
+  ],
+  "skills": [
+    "GTM architecture and playbook design",
+    "AI-first execution across phone, email, and LinkedIn",
+    "Forecast, pipeline hygiene, and RevOps automation"
+  ],
+  "trackRecord": [
+    "$1.2M in qualified pipeline in 4 months"
+  ],
+  "icp": {
+    "demographics": [
+      "Enterprise, cross-functional buying committee including CMO, CTO, and Head of Customer Experience"
+    ],
+    "messagePillars": [
+      "Integration fit and data quality",
+      "Scalability and reliability",
+      "Personalization and AI leverage"
+    ],
+    "channelFocus": [
+      "ABM with executive outreach",
+      "Partner co-sell and marketplace attach"
+    ],
+    "riskMitigation": [
+      "Data access and integration risk – scoped POC, sandbox, success criteria",
+      "Adoption risk – manager-first enablement, default templates, usage goals"
+    ]
+  },
+  "theme": {
+    "primary": "#071E3C",
+    "secondary": "#4050C6",
+    "accent": "#F89C59"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/ml53dxzwkfu539caf5lur9mtkv4ui4ok"
+} as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
@@ -195,12 +258,12 @@ export default function Page() {
             The Real Reason You're Hiring This Role
           </h2>
           <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-            It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
-            <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
-            <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
-            <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
-            <span className="block mt-2">Here's exactly how I'd approach each.</span>
-          </p>
+  It's not just about finding a GTM leader. You need someone who can solve{" "}
+  <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
+  <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
+  <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
+  <span className="block mt-2">Here's exactly how I'd approach each.</span>
+</p>
 
           <div className="space-y-8">
             {challenges.map((c, idx) => (
