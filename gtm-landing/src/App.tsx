@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Intapp",
-    "role": "Sr Director, GTM Transformation"
+    "name": "Lyra Health",
+    "role": "Sr. Salesforce Developer - GTM"
   },
   "challenges": [
     {
-      "title": "Drive GTM Transformation to Scale",
+      "title": "Improving Sales Processes Efficiency",
       "approach": [
-        "Design GTM architecture and playbook for scalability",
-        "Apply AI-first execution across phone, email, and LinkedIn",
-        "Implement forecast, pipeline hygiene, and RevOps automation"
+        "Implement trigger-based sequencing to increase reply rates",
+        "Optimize GTM workflows using automation tools like Apollo and RapidAPI",
+        "Utilize cold calling frameworks to boost pick up rates"
       ]
     },
     {
-      "title": "Enhance Collaboration Across Cross-Functional Teams",
+      "title": "Scaling Salesforce Instances for Growth",
       "approach": [
-        "Orchestrate GTM workflows across multiple tools for enhanced collaboration",
-        "Deploy persona-based dynamic copy to increase alignment",
-        "Run fast POC cycles with AI agents to promote cross-functional teamwork"
+        "Design and deploy a comprehensive GTM stack",
+        "Create agentic revenue systems for lead scoring and routing",
+        "Utilize AI-driven voice cycles for higher conversion rates"
       ]
     },
     {
-      "title": "Optimize GTM Strategy for Revenue Growth",
+      "title": "Enhancing User Experience and Security",
       "approach": [
-        "Apply frameworks like MEDDPICC, TAS, and QBS for structured forecasting",
-        "Utilize AI-driven voice cycles with variable inserts for high conversion rates",
-        "Monitor and optimize KPIs for improved revenue predictability"
+        "Apply GTM architecture and playbook design to streamline UX",
+        "Leverage AI-first execution across phone, email, and LinkedIn for secure interactions",
+        "Enforce pipeline hygiene with RevOps automation to protect data"
       ]
     }
   ],
@@ -85,36 +85,34 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$1.2M in qualified pipeline in 4 months",
-    "31% reply-to-meeting conversion (up from 14%)",
-    "38% meeting-to-client conversion rate"
+    "2% to 23% reply rate",
+    "$1.2M qualified pipeline",
+    "4 months to $1.2M pipeline"
   ],
   "icp": {
     "demographics": [
-      "Enterprise",
-      "professional and financial services firms",
-      "SaaS provider"
+      "Upper mid-market, mental health industry, with a focus on improving outcomes"
     ],
     "messagePillars": [
-      "Integration fit and data quality",
+      "Speed to value and time to first outcome",
       "Scalability and reliability",
-      "Personalization and AI leverage"
+      "Integration fit and data quality"
     ],
     "channelFocus": [
-      "Partner co-sell and marketplace attach",
-      "Field events for regulated or enterprise buyers"
+      "Outbound POC to prove value fast",
+      "Partner co-sell and marketplace attach"
     ],
     "riskMitigation": [
-      "Data access and integration risk",
-      "Adoption risk"
+      "Adoption risk - emphasizing the importance of practicing skills in everyday life",
+      "Forecast or ROI skepticism - providing clear success metrics and outcomes"
     ]
   },
   "theme": {
-    "primary": "#324655",
-    "secondary": "#54C1AC",
-    "accent": "#9DD0C3"
+    "primary": "#133D54",
+    "secondary": "#017A8F",
+    "accent": "#E0EEF0"
   },
-  "sendsparkUrl": "https://sendspark.com/share/r9i8a2oux98qlimxslnbarcsg9lwmbwm"
+  "sendsparkUrl": "https://sendspark.com/share/gn9wk2uw17t6n8unulz3yh0m9jy97vho"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
