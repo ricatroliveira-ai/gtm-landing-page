@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Medallia",
-    "role": "Senior Solutions Architect, Salesforce & GTM Apps"
+    "name": "Procore Technologies",
+    "role": "Senior GTM Enablement Manager, Leadership Development"
   },
   "challenges": [
     {
-      "title": "Enhancing Salesforce Ecosystem for Scalability",
+      "title": "Identify Opportunities for Growth Through Data-Driven Insights",
       "approach": [
-        "Design tailored GTM architecture and playbook",
-        "Implement AI-first execution across multiple channels",
-        "Ensure forecast accuracy and pipeline hygiene"
+        "Utilize AI-driven revenue systems for quick signal capture and scoring",
+        "Apply MEDDPICC framework to enhance forecasting and qualification accuracy",
+        "Implement trigger-based sequencing tied to key signals for improved reply rates"
       ]
     },
     {
-      "title": "Optimizing Business Process Efficiency and Accuracy",
+      "title": "Design and Evolve Leadership Development Programs",
       "approach": [
-        "Implement RevOps automation for process optimization",
-        "Apply frameworks for structured forecasting and qualification",
-        "Utilize AI agents for revenue signal capture and routing"
+        "Deploy persona-based dynamic copy for training materials",
+        "Craft voice-led scripts and email frameworks for training delivery",
+        "Generate operator-grade deliverables for program execution"
       ]
     },
     {
-      "title": "Streamlining Integrations for Unified Customer Data",
+      "title": "Customize and Deliver Leadership Training",
       "approach": [
-        "Design GTM architecture for unified data",
-        "Implement RevOps automation to enforce pipeline hygiene across integrations",
-        "Leverage AI-first execution to reconcile phone, email, and LinkedIn signals"
+        "Apply role-specific intros to training materials for improved engagement",
+        "Craft personalized training content for different leadership levels",
+        "Use structured forecasting to enhance training customization"
       ]
     }
   ],
@@ -85,32 +85,33 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$1.2M in qualified pipeline in 4 months"
+    "6x increase in meetings",
+    "0.08% spam complaints"
   ],
   "icp": {
     "demographics": [
-      "Enterprise, cross-functional buying committee including CMO, CTO, and Head of Customer Experience"
+      "Enterprise, construction industry, cloud-based construction management software"
     ],
     "messagePillars": [
-      "Integration fit and data quality",
+      "Risk reduction and compliance",
       "Scalability and reliability",
-      "Personalization and AI leverage"
+      "Speed to value and time to first outcome"
     ],
     "channelFocus": [
-      "ABM with executive outreach",
-      "Partner co-sell and marketplace attach"
+      "Partner co-sell and marketplace attach",
+      "Field events for regulated or enterprise buyers"
     ],
     "riskMitigation": [
-      "Data access and integration risk – scoped POC, sandbox, success criteria",
-      "Adoption risk – manager-first enablement, default templates, usage goals"
+      "Adoption risk",
+      "Forecast or ROI skepticism"
     ]
   },
   "theme": {
-    "primary": "#071E3C",
-    "secondary": "#4050C6",
-    "accent": "#F89C59"
+    "primary": "#8A6D3B",
+    "secondary": "#F27152",
+    "accent": "#FF5200"
   },
-  "sendsparkUrl": "https://sendspark.com/share/ml53dxzwkfu539caf5lur9mtkv4ui4ok"
+  "sendsparkUrl": "https://sendspark.com/share/tue2mkj5z438qe5e1i10cjsx9uo4a9gn"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
