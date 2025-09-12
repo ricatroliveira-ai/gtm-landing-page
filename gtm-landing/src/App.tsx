@@ -37,7 +37,7 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
+  const g = parseInt(hex.substring(4, 6), 16);
   const b = parseInt(hex.substring(4, 6), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Alkami Technology",
-    "role": "Sr Director, Product Management (GTM)"
+    "name": "CrowdStrike",
+    "role": "GTM Technology Operations Director (Remote)"
   },
   "challenges": [
     {
-      "title": "Standardize GTM Processes for Efficiency",
+      "title": "Streamlining GTM Technology Operations for Scalability",
       "approach": [
-        "Design scalable GTM architecture and playbook",
-        "Implement trigger-based sequencing for efficiency",
-        "Deploy AI-first execution across phone, email, and LinkedIn"
+        "Designing scalable GTM architecture and playbooks",
+        "Implementing AI-first execution across channels",
+        "Ensuring forecast accuracy and pipeline hygiene"
       ]
     },
     {
-      "title": "Enhance Pricing Governance and Sales Enablement",
+      "title": "Identifying and Resolving Process Inefficiencies",
       "approach": [
-        "Establish guardrails for pricing governance and sales enablement",
-        "Ensure pricing and sales processes have RevOps automation",
-        "Utilize AI agents for pricing signals and routing"
+        "Implementing frameworks like MEDDPICC and TAS",
+        "Lifting reply rates from 2% to 23% through trigger-based sequencing",
+        "Orchestrating GTM workflows for lead hygiene and visibility"
       ]
     },
     {
-      "title": "Improve Cross-Functional Alignment and Transparency",
+      "title": "Driving Revenue Growth Through Operational Excellence",
       "approach": [
-        "Orchestrate GTM workflows across multiple tools for visibility",
-        "Deliver operator-grade dashboards for cross-functional alignment",
-        "Track and optimize KPIs across departments for transparency"
+        "Deploying AI-driven voice cycles for high conversion rates",
+        "Creating scaled personalization systems for increased reply rates",
+        "Designing and executing fast POC cycles for ROI"
       ]
     }
   ],
@@ -86,34 +86,33 @@ const RAW_CONFIG = {
   ],
   "trackRecord": [
     "$1.2M in qualified pipeline in 4 months",
-    "0.08% spam complaints",
-    "0.9% unsubscribe rate",
-    "6x increase in meetings"
+    "2% to 23% reply rate lift",
+    "14% to 31% reply-to-meeting conversion"
   ],
   "icp": {
     "demographics": [
-      "Upper mid-market, Fintech/Payments, high-growth and culture-focused"
+      "Enterprise cybersecurity leader focusing on stopping breaches with cloud-native platform"
     ],
     "messagePillars": [
+      "Risk reduction and compliance",
       "Scalability and reliability",
-      "Personalization and AI leverage",
-      "Speed to value and time to first outcome"
+      "Integration fit and data quality"
     ],
     "channelFocus": [
       "Outbound POC to prove value fast",
-      "Partner co-sell and marketplace attach"
+      "ABM with executive outreach"
     ],
     "riskMitigation": [
-      "Data access and integration risk",
-      "Forecast or ROI skepticism"
+      "Legal or compliance objections",
+      "Data access and integration risk"
     ]
   },
   "theme": {
-    "primary": "#8B8447",
-    "secondary": "#BAA769",
-    "accent": "#47648B"
+    "primary": "#292929",
+    "secondary": "#FC0000",
+    "accent": "#B60000"
   },
-  "sendsparkUrl": "https://sendspark.com/share/jscpyrqr6capxz2vfkezuaq6asz5eevq"
+  "sendsparkUrl": "https://sendspark.com/share/rcgn52z134f5wx7xlmbi33pon0tvu829"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
