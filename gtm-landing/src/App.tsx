@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Medallia",
-    "role": "Senior Solutions Architect, Salesforce & GTM Apps"
+    "name": "Harmonic Inc",
+    "role": "Telco Fiber Go-To-Market (GTM) Senior Manager"
   },
   "challenges": [
     {
-      "title": "Enhancing Salesforce Ecosystem for Scalability",
+      "title": "Drive Growth in Fiber Business",
       "approach": [
-        "Design tailored GTM architecture and playbook",
-        "Implement AI-first execution across multiple channels",
-        "Ensure forecast accuracy and pipeline hygiene"
+        "Design tailored GTM architecture for Fiber services",
+        "Implement AI-first execution for targeted outreach",
+        "Utilize forecasting and pipeline hygiene for growth"
       ]
     },
     {
-      "title": "Optimizing Business Process Efficiency and Accuracy",
+      "title": "Expand Market Engagement with Telcos",
       "approach": [
-        "Implement RevOps automation for process optimization",
-        "Apply frameworks for structured forecasting and qualification",
-        "Utilize AI agents for revenue signal capture and routing"
+        "Craft targeted GTM strategies for Telco segment",
+        "Execute AI-driven voice cycles for personalized outreach",
+        "Optimize RevOps automation for market expansion"
       ]
     },
     {
-      "title": "Streamlining Integrations for Unified Customer Data",
+      "title": "Develop Strategic Relationships with Stakeholders",
       "approach": [
-        "Design GTM architecture for unified data",
-        "Apply AI-first execution to integration workflows",
-        "Enforce pipeline hygiene via RevOps automation"
+        "Deploy persona-based dynamic copy for relationship building",
+        "Design strategic GTM frameworks for stakeholder engagement",
+        "Track and optimize KPIs for relationship management"
       ]
     }
   ],
@@ -85,32 +85,34 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$1.2M in qualified pipeline in 4 months"
+    "$1.2M in qualified pipeline in 4 months",
+    "38% meeting-to-client conversion rate",
+    "14% to 31% reply-to-meeting conversion"
   ],
   "icp": {
     "demographics": [
-      "Enterprise, cross-functional buying committee including CMO, CTO, and Head of Customer Experience"
+      "Enterprise, cross-functional buying committee including CTO and IT leaders"
     ],
     "messagePillars": [
-      "Integration fit and data quality",
       "Scalability and reliability",
+      "Integration fit and data quality",
       "Personalization and AI leverage"
     ],
     "channelFocus": [
-      "ABM with executive outreach",
-      "Partner co-sell and marketplace attach"
+      "Outbound POC to prove value fast",
+      "ABM with executive outreach"
     ],
     "riskMitigation": [
-      "Data access and integration risk – scoped POC, sandbox, success criteria",
-      "Adoption risk – manager-first enablement, default templates, usage goals"
+      "Forecast or ROI skepticism",
+      "Data access and integration risk"
     ]
-  ],
-  "theme": {
-    "primary": "#F49740",
-    "secondary": "#4050C6",
-    "accent": "#FFFFFF"
   },
-  "sendsparkUrl": "https://sendspark.com/share/ml53dxzwkfu539caf5lur9mtkv4ui4ok"
+  "theme": {
+    "primary": "#F4FAFF",
+    "secondary": "#03243D",
+    "accent": "#25B0D9"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/2k03vpgck2wha9mogde7f7il0fpo9wkt"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
