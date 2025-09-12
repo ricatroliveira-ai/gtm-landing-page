@@ -37,8 +37,8 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
+  const g = parseInt(hex.substring(4, 6), 16);
+  const b = parseInt(hex.substring(6, 8), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
 }
@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Empowerly",
-    "role": "Senior Go To Market (GTM) Financial Analyst"
+    "name": "Adobe",
+    "role": "Sr. Channel GTM Product Marketing Manager"
   },
   "challenges": [
     {
-      "title": "Optimizing Marketing Campaigns for Maximum ROI",
+      "title": "Drive Growth in Higher Education Channel",
       "approach": [
-        "Craft persona-based dynamic copy for higher conversion rates",
-        "Implement trigger-based sequencing to improve reply rates",
-        "Utilize AI-driven voice cycles for increased meeting-to-client conversion rates"
+        "Craft persona-based dynamic copy for education segment",
+        "Implement trigger-based sequencing for higher education leads",
+        "Operationalize repeatable outbound motions for education audience"
       ]
     },
     {
-      "title": "Scaling Revenue Growth by 150–200%",
+      "title": "Optimize Channel Reach and Impact",
       "approach": [
-        "Built and deployed a complete GTM stack that created $1.2M in qualified pipeline in 4 months",
-        "Designed agentic revenue systems to increase meetings by 6x",
-        "Applied role- and vertical-specific intros to raise SQL rate from 22% to 33%"
+        "Designed agentic revenue systems to capture and route signals efficiently",
+        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
+        "Deployed persona-based dynamic copy for personalized outreach"
       ]
     },
     {
-      "title": "Transitioning from Performance Marketing to Data-Informed Revenue Engine",
+      "title": "Accelerate Growth Through Field Execution",
       "approach": [
-        "Orchestrated GTM workflows across multiple platforms for lead hygiene and visibility",
-        "Established guardrails to keep spam complaints under 0.08%",
-        "Monitored reorder cadence as a KPI proxy for customer health"
+        "Applied role- and vertical-specific intros to raise SQL rate",
+        "Built ICPs and sequenced outreach for structured forecasting",
+        "Lifted meetings per week from 1 to 6 through GTM architecture"
       ]
     }
   ],
@@ -85,36 +85,36 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$1.2M qualified pipeline in 4 months",
-    "150-200% revenue growth",
-    "31% reply-to-meeting conversion (up from 14%)"
+    "14% to 31% reply-to-meeting conversion",
+    "0.08% spam complaints",
+    "0.9% unsubscribe rate",
+    "1 to 6 meetings per week"
   ],
   "icp": {
     "demographics": [
-      "Mid-market, dual B2C/B2B2B ed-tech: parents of high school students (B2C) and K–12/college counseling leaders with procurement and IT/security oversight (B2B2B); founder-led, Series A–C; remote-first; aiming for 150–200%+ growth."
+      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
     ],
     "messagePillars": [
-      "Speed to value and time to first outcome",
-      "Personalization and AI leverage",
-      "Integration fit and data quality"
+      "Scalability and reliability",
+      "Integration fit and data quality",
+      "Revenue efficiency"
     ],
     "channelFocus": [
-      "Inbound conversion lift on high-intent pages and trials",
       "Partner co-sell and marketplace attach",
-      "Outbound POC to prove value fast"
+      "ABM with executive outreach"
     ],
     "riskMitigation": [
-      "Legal or compliance objections → pre-approved language, opt-out rules, QA",
+      "Adoption risk → manager-first enablement, default templates, usage goals",
       "Data access and integration risk → scoped POC, sandbox, success criteria",
-      "Adoption risk → manager-first enablement, default templates, usage goals"
+      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
     ]
-  },
+  ],
   "theme": {
-    "primary": "#001242",
-    "secondary": "#101B6E",
-    "accent": "#3B000A"
+    "primary": "#000000",
+    "secondary": "#FF0000",
+    "accent": "#0500CB"
   },
-  "sendsparkUrl": "https://sendspark.com/share/s8q6n24ah32d4ib2dhf4i5bp0nv6e7ao"
+  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
