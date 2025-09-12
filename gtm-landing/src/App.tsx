@@ -1,4 +1,3 @@
-// file: app/page.tsx
 "use client";
 
 import React from "react";
@@ -170,7 +169,7 @@ export default function Page() {
               { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
               { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
             ].map(({ Icon, stat, label, sub }, i) => (
-              <div key={i} className="text-center p-8 bg-card rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+              <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
                 <Icon className="w-12 h-12 mx-auto mb-6" style={primaryColorStyle} />
                 <div className="text-4xl font-black mb-2" style={textBlack}>{stat}</div>
                 <div className="font-medium" style={primaryColorStyle}>{label}</div>
@@ -181,7 +180,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-background">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
             The Real Reason You're Hiring This Role
@@ -266,7 +265,7 @@ export default function Page() {
           </h3>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-sm">
               <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={primaryColorStyle}>
                 <Target className="w-5 h-5" /> Researched ICP
               </h3>
@@ -275,7 +274,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="bg-card p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-sm">
               <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={primaryColorStyle}>
                 <Mic className="w-5 h-5" /> Message Pillars
               </h3>
@@ -284,7 +283,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="bg-card p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-sm">
               <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={primaryColorStyle}>
                 <Target className="w-5 h-5" /> Channel Focus
               </h3>
@@ -293,7 +292,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="bg-card p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-sm">
               <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={primaryColorStyle}>
                 <Lock className="w-5 h-5" /> Risks & Mitigations
               </h3>
@@ -357,7 +356,7 @@ export default function Page() {
         </div>
       </section>
 
-      <footer className="py-8 px-4 text-center bg-secondary text-secondary-foreground">
+      <footer className="py-8 px-4 text-center bg-gray-100">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm opacity-80">
             Contact: ricatroliveira@gmail.com • linkedin.com/in/ricatroliveira/ • São Paulo
@@ -367,4 +366,3 @@ export default function Page() {
     </div>
   );
 }
-
