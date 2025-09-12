@@ -37,8 +37,8 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
+  const g = parseInt(hex.substring(4, 6), 16);
+  const b = parseInt(hex.substring(6, 8), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
 }
@@ -48,7 +48,74 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {   "company": {     "name": "Harmonic Inc",     "role": "Telco Fiber Go-To-Market (GTM) Senior Manager"   },   "challenges": [     {       "title": "Drive Growth in Fiber Business",       "approach": [         "Design tailored GTM architecture for Fiber services",         "Implement AI-first execution for targeted outreach",         "Utilize forecasting and pipeline hygiene for growth"       ]     },     {       "title": "Expand Market Engagement with Telcos",       "approach": [         "Craft targeted GTM strategies for Telco segment",         "Execute AI-driven voice cycles for personalized outreach",         "Optimize RevOps automation for market expansion"       ]     },     {       "title": "Develop Strategic Relationships with Stakeholders",       "approach": [         "Deploy persona-based dynamic copy for relationship building",         "Design strategic GTM frameworks for stakeholder engagement",         "Track and optimize KPIs for relationship management"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "$1.2M in qualified pipeline in 4 months",     "38% meeting-to-client conversion rate",     "14% to 31% reply-to-meeting conversion"   ],   "icp": {     "demographics": [       "Enterprise, cross-functional buying committee including CTO and IT leaders"     ],     "messagePillars": [       "Scalability and reliability",       "Integration fit and data quality",       "Personalization and AI leverage"     ],     "channelFocus": [       "Outbound POC to prove value fast",       "ABM with executive outreach"     ],     "riskMitigation": [       "Forecast or ROI skepticism",       "Data access and integration risk"     ]   },   "theme": { "primary": "#292929", "secondary": "#FC0000", "accent": "#A60021" },   "sendsparkUrl": "https://sendspark.com/share/2k03vpgck2wha9mogde7f7il0fpo9wkt" } as unknown as GTMPageConfig;
+const RAW_CONFIG = {
+  "company": {
+    "name": "Adobe",
+    "role": "Sr. Channel GTM Product Marketing Manager"
+  },
+  "challenges": [
+    {
+      "title": "Drive Growth in Higher Education Channel",
+      "approach": [
+        "Craft persona-based dynamic copy for education segment",
+        "Implement trigger-based sequencing for higher education leads",
+        "Operationalize repeatable outbound motions for education audience"
+      ]
+    },
+    {
+      "title": "Optimize Channel Reach and Impact",
+      "approach": [
+        "Designed agentic revenue systems to capture and route signals efficiently",
+        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
+        "Deployed persona-based dynamic copy for personalized outreach"
+      ]
+    },
+    {
+      "title": "Accelerate Growth Through Field Execution",
+      "approach": [
+        "Applied role- and vertical-specific intros to raise SQL rate",
+        "Built ICPs and sequenced outreach for structured forecasting",
+        "Lifted meetings per week from 1 to 6 through GTM architecture"
+      ]
+    }
+  ],
+  "skills": [
+    "GTM architecture and playbook design",
+    "AI-first execution across phone, email, and LinkedIn",
+    "Forecast, pipeline hygiene, and RevOps automation"
+  ],
+  "trackRecord": [
+    "14% to 31% reply-to-meeting conversion",
+    "0.08% spam complaints",
+    "0.9% unsubscribe rate",
+    "1 to 6 meetings per week"
+  ],
+  "icp": {
+    "demographics": [
+      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
+    ],
+    "messagePillars": [
+      "Scalability and reliability",
+      "Integration fit and data quality",
+      "Revenue efficiency"
+    ],
+    "channelFocus": [
+      "Partner co-sell and marketplace attach",
+      "ABM with executive outreach"
+    ],
+    "riskMitigation": [
+      "Adoption risk → manager-first enablement, default templates, usage goals",
+      "Data access and integration risk → scoped POC, sandbox, success criteria",
+      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
+    ]
+  ],
+  "theme": {
+    "primary": "#000000",
+    "secondary": "#FF0000",
+    "accent": "#0500CB"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
+} as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
