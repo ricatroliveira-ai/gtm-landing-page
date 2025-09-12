@@ -195,8 +195,8 @@ export default function Page() {
             The Real Reason You're Hiring This Role
           </h2>
           
-        <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-  It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
+       <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
+  It's not just about finding a GTM leader. You need someone who can solve{" "}
   <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
   <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
   <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
