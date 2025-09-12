@@ -1,6 +1,4 @@
-// file: app/page.tsx
-"use client";
-
+// src/App.tsx
 import React from "react";
 import {
   Calendar,
@@ -25,10 +23,10 @@ export type GTMPageConfig = {
   skills: string[];
   trackRecord: string[];
   icp: {
-    demographics: string[]; // V2: arrays for bullet lists
-    messagePillars: string[]; // V2
-    channelFocus: string[]; // V2
-    riskMitigation: string[]; // V2
+    demographics: string[];
+    messagePillars: string[];
+    channelFocus: string[];
+    riskMitigation: string[];
   };
   theme: { primary: string; secondary: string; accent: string };
   sendsparkUrl: string;
@@ -37,17 +35,16 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(4, 6), 16);
-  const b = parseInt(hex.substring(6, 8), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
 }
 
-// Optional safety: accept strings OR arrays in incoming JSON
 const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
-// ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
+// ✅ Raw config (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
     "name": "Adobe",
@@ -127,7 +124,7 @@ const CONFIG: GTMPageConfig = {
   }
 } as GTMPageConfig;
 
-export default function Page() {
+export default function App() {
   const { company, challenges, icp, theme, sendsparkUrl } = CONFIG;
 
   // --- Global values & styles ---
@@ -164,7 +161,7 @@ export default function Page() {
 
   const white85: React.CSSProperties = { color: "rgba(255,255,255,0.85)" };
 
-  // Accent-driven styles for requested tweaks
+  // Accent-driven styles
   const accentColorStyle: React.CSSProperties = { color: theme.accent };
   const accentBgStyle: React.CSSProperties = { background: theme.accent, color: pickTextFor(theme.accent) };
   const onAccent: React.CSSProperties = { color: pickTextFor(theme.accent) };
@@ -178,13 +175,13 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* ============================== HERO ============================== */}
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-  A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
-</h1>
+            A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
+          </h1>
 
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
             Tailored for {company.role} at {company.name} — here's how I'd move the numbers in 90 days.
@@ -200,7 +197,7 @@ export default function Page() {
                 <iframe
                   src={sendsparkUrl.replace("/share/", "/embed/")}
                   className="w-full h-full"
-                  frameBorder="0"
+                  frameBorder={0}
                   title="Personal intro video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -227,36 +224,37 @@ export default function Page() {
       </section>
 
       {/* ============================== STATS ============================== */}
-{/* 2) White background; subheader+icons+stats in accent */}
-<section className="py-20 px-4" style={whiteBg}>
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
-      The Numbers Speak For Themselves
-    </h2>
-    <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
-      Some Career Highlights
-    </h3>
+      {/* 2) White background; subheader+icons+stats in accent */}
+      <section className="py-20 px-4" style={whiteBg}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
+            The Numbers Speak For Themselves
+          </h2>
+          <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
+            Some Career Highlights
+          </h3>
 
-    <div className="grid md:grid-cols-4 gap-8">
-      {[
-        { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
-        { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
-        { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
-        { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
-      ].map(({ Icon, stat, label, sub }, i) => (
-        <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
-          <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
-          <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
-          <div className="font-medium" style={textSlate90}>{label}</div>
-          <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
+              { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
+              { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
+              { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
+            ].map(({ Icon, stat, label, sub }, i) => (
+              <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+                <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
+                <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
+                <div className="font-medium" style={textSlate90}>{label}</div>
+                <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-{/*============================== CHALLENGES ============================== */}
+      </section>
+
+      {/* ============================== CHALLENGES ============================== */}
       {/* 3) Accent highlight in sentence; card titles accent */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
             The Real Reason You're Hiring This Role
@@ -273,7 +271,10 @@ export default function Page() {
             {challenges.map((c, idx) => (
               <div key={idx} style={challengeCardStyle}>
                 <div className="flex items-start gap-4">
-                  <div className="rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1" style={primaryBgStyle}>
+                  <div
+                    className="rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1"
+                    style={primaryBgStyle}
+                  >
                     {(idx + 1).toString().padStart(2, "0")}
                   </div>
                   <div>
@@ -385,13 +386,12 @@ export default function Page() {
       </section>
 
       {/* ============================== LINKEDIN PROFILE ============================== */}
-      {/* LinkedIn section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-black mb-4" style={textNearBlack}>
             Get To Know Me
           </h2>
-          <h3 className="text-xl font-medium mb-12" style={textSlate85}>
+        <h3 className="text-xl font-medium mb-12" style={textSlate85}>
             Here's My LinkedIn
           </h3>
 
@@ -440,7 +440,7 @@ export default function Page() {
       </section>
 
       {/* ============================== FOOTER ============================== */}
-      <footer className="py-8 px-4 text-center bg-secondary text-secondary-foreground">
+      <footer className="py-8 px-4 text-center bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm opacity-80">
             Contact: ricatroliveira@gmail.com • linkedin.com/in/ricatroliveira/ • São Paulo
