@@ -1,4 +1,6 @@
-// src/App.tsx
+// file: app/page.tsx
+"use client";
+
 import React from "react";
 import {
   Calendar,
@@ -23,10 +25,10 @@ export type GTMPageConfig = {
   skills: string[];
   trackRecord: string[];
   icp: {
-    demographics: string[];
-    messagePillars: string[];
-    channelFocus: string[];
-    riskMitigation: string[];
+    demographics: string[]; // V2: arrays for bullet lists
+    messagePillars: string[]; // V2
+    channelFocus: string[]; // V2
+    riskMitigation: string[]; // V2
   };
   theme: { primary: string; secondary: string; accent: string };
   sendsparkUrl: string;
@@ -35,7 +37,7 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
+  const g = parseInt(hex.substring(4, 6), 16);
   const b = parseInt(hex.substring(4, 6), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
@@ -45,35 +47,35 @@ function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
 const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
-// ✅ Raw config (object, not a quoted string)
+// ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Adobe",
-    "role": "Sr. Channel GTM Product Marketing Manager"
+    "name": "CrowdStrike",
+    "role": "GTM Technology Operations Director (Remote)"
   },
   "challenges": [
     {
-      "title": "Drive Growth in Higher Education Channel",
+      "title": "Streamlining GTM Technology Operations for Scalability",
       "approach": [
-        "Craft persona-based dynamic copy for education segment",
-        "Implement trigger-based sequencing for higher education leads",
-        "Operationalize repeatable outbound motions for education audience"
+        "Designing scalable GTM architecture and playbooks",
+        "Implementing AI-first execution across channels",
+        "Ensuring forecast accuracy and pipeline hygiene"
       ]
     },
     {
-      "title": "Optimize Channel Reach and Impact",
+      "title": "Identifying and Resolving Process Inefficiencies",
       "approach": [
-        "Designed agentic revenue systems to capture and route signals efficiently",
-        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
-        "Deployed persona-based dynamic copy for personalized outreach"
+        "Implementing frameworks like MEDDPICC and TAS",
+        "Lifting reply rates from 2% to 23% through trigger-based sequencing",
+        "Orchestrating GTM workflows for lead hygiene and visibility"
       ]
     },
     {
-      "title": "Accelerate Growth Through Field Execution",
+      "title": "Driving Revenue Growth Through Operational Excellence",
       "approach": [
-        "Applied role- and vertical-specific intros to raise SQL rate",
-        "Built ICPs and sequenced outreach for structured forecasting",
-        "Lifted meetings per week from 1 to 6 through GTM architecture"
+        "Deploying AI-driven voice cycles for high conversion rates",
+        "Creating scaled personalization systems for increased reply rates",
+        "Designing and executing fast POC cycles for ROI"
       ]
     }
   ],
@@ -83,36 +85,34 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "14% to 31% reply-to-meeting conversion",
-    "0.08% spam complaints",
-    "0.9% unsubscribe rate",
-    "1 to 6 meetings per week"
+    "$1.2M in qualified pipeline in 4 months",
+    "2% to 23% reply rate lift",
+    "14% to 31% reply-to-meeting conversion"
   ],
   "icp": {
     "demographics": [
-      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
+      "Enterprise cybersecurity leader focusing on stopping breaches with cloud-native platform"
     ],
     "messagePillars": [
+      "Risk reduction and compliance",
       "Scalability and reliability",
-      "Integration fit and data quality",
-      "Revenue efficiency"
+      "Integration fit and data quality"
     ],
     "channelFocus": [
-      "Partner co-sell and marketplace attach",
+      "Outbound POC to prove value fast",
       "ABM with executive outreach"
     ],
     "riskMitigation": [
-      "Adoption risk → manager-first enablement, default templates, usage goals",
-      "Data access and integration risk → scoped POC, sandbox, success criteria",
-      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
+      "Legal or compliance objections",
+      "Data access and integration risk"
     ]
-  ],
-  "theme": {
-    "primary": "#000000",
-    "secondary": "#FF0000",
-    "accent": "#0500CB"
   },
-  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
+  "theme": {
+    "primary": "#292929",
+    "secondary": "#FC0000",
+    "accent": "#B60000"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/rcgn52z134f5wx7xlmbi33pon0tvu829"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
@@ -125,7 +125,7 @@ const CONFIG: GTMPageConfig = {
   }
 } as GTMPageConfig;
 
-export default function App() {
+export default function Page() {
   const { company, challenges, icp, theme, sendsparkUrl } = CONFIG;
 
   // --- Global values & styles ---
@@ -162,7 +162,7 @@ export default function App() {
 
   const white85: React.CSSProperties = { color: "rgba(255,255,255,0.85)" };
 
-  // Accent-driven styles
+  // Accent-driven styles for requested tweaks
   const accentColorStyle: React.CSSProperties = { color: theme.accent };
   const accentBgStyle: React.CSSProperties = { background: theme.accent, color: pickTextFor(theme.accent) };
   const onAccent: React.CSSProperties = { color: pickTextFor(theme.accent) };
@@ -176,13 +176,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* ============================== HERO ============================== */}
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-            A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
-          </h1>
+  A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
+</h1>
 
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
             Tailored for {company.role} at {company.name} — here's how I'd move the numbers in 90 days.
@@ -198,7 +198,7 @@ export default function App() {
                 <iframe
                   src={sendsparkUrl.replace("/share/", "/embed/")}
                   className="w-full h-full"
-                  frameBorder={0}
+                  frameBorder="0"
                   title="Personal intro video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -225,57 +225,53 @@ export default function App() {
       </section>
 
       {/* ============================== STATS ============================== */}
-      {/* 2) White background; subheader+icons+stats in accent */}
-      <section className="py-20 px-4" style={whiteBg}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
-            The Numbers Speak For Themselves
-          </h2>
-          <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
-            Some Career Highlights
-          </h3>
+{/* 2) White background; subheader+icons+stats in accent */}
+<section className="py-20 px-4" style={whiteBg}>
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
+      The Numbers Speak For Themselves
+    </h2>
+    <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
+      Some Career Highlights
+    </h3>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
-              { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
-              { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
-              { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
-            ].map(({ Icon, stat, label, sub }, i) => (
-              <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
-                <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
-                <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
-                <div className="font-medium" style={textSlate90}>{label}</div>
-                <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
-              </div>
-            ))}
-          </div>
+    <div className="grid md:grid-cols-4 gap-8">
+      {[
+        { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
+        { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
+        { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
+        { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
+      ].map(({ Icon, stat, label, sub }, i) => (
+        <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+          <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
+          <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
+          <div className="font-medium" style={textSlate90}>{label}</div>
+          <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
         </div>
-      </section>
-
-      {/* ============================== CHALLENGES ============================== */}
+      ))}
+    </div>
+  </div>
+</section>
+{/*============================== CHALLENGES ============================== */}
       {/* 3) Accent highlight in sentence; card titles accent */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-background">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
             The Real Reason You're Hiring This Role
           </h2>
-          <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-            It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
-            <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
-            <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
-            <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
-            <span className="block mt-2">Here's exactly how I'd approach each.</span>
-          </p>
+         <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
+  It's not just about finding a GTM leader. You need someone who can solve{" "}
+  <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
+  <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
+  <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
+  <span className="block mt-2">Here's exactly how I'd approach each.</span>
+</p>
 
           <div className="space-y-8">
             {challenges.map((c, idx) => (
               <div key={idx} style={challengeCardStyle}>
                 <div className="flex items-start gap-4">
-                  <div
-                    className="rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1"
-                    style={primaryBgStyle}
-                  >
+                  <div className="rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1" style={primaryBgStyle}>
                     {(idx + 1).toString().padStart(2, "0")}
                   </div>
                   <div>
@@ -442,7 +438,7 @@ export default function App() {
       </section>
 
       {/* ============================== FOOTER ============================== */}
-      <footer className="py-8 px-4 text-center bg-gray-900 text-white">
+      <footer className="py-8 px-4 text-center bg-secondary text-secondary-foreground">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm opacity-80">
             Contact: ricatroliveira@gmail.com • linkedin.com/in/ricatroliveira/ • São Paulo
