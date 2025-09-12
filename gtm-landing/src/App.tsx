@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "IDEMIA",
-    "role": "Senior Product Manager – Strategy & GTM"
+    "name": "Intapp",
+    "role": "Sr Director, GTM Transformation"
   },
   "challenges": [
     {
-      "title": "Define Clear Product Vision & Roadmap",
+      "title": "Drive GTM Transformation to Scale",
       "approach": [
-        "Craft persona-based dynamic copy for messaging alignment",
-        "Implement role-specific intros for better SQL rate",
-        "Design AI-driven voice cycles for personalized outreach"
+        "Design GTM architecture and playbook for scalability",
+        "Apply AI-first execution across phone, email, and LinkedIn",
+        "Implement forecast, pipeline hygiene, and RevOps automation"
       ]
     },
     {
-      "title": "Accelerate Go-To-Market Strategies & Execution",
+      "title": "Enhance Collaboration Across Cross-Functional Teams",
       "approach": [
-        "Build and deploy complete GTM stack to generate $1.2M in qualified pipeline",
-        "Utilize AGI-driven voice cycles for improved meeting-to-client conversion rate",
-        "Initiate trigger-based sequencing for higher reply rates"
+        "Orchestrate GTM workflows across multiple tools for enhanced collaboration",
+        "Deploy persona-based dynamic copy to increase alignment",
+        "Run fast POC cycles with AI agents to promote cross-functional teamwork"
       ]
     },
     {
-      "title": "Improve Financial Monitoring & Profitability",
+      "title": "Optimize GTM Strategy for Revenue Growth",
       "approach": [
-        "Track and optimize key KPIs to improve forecast predictability",
-        "Implement trigger-based sequencing for increased reply rates",
-        "Create structured forecasting through ICPs and sequenced outreach"
+        "Apply frameworks like MEDDPICC, TAS, and QBS for structured forecasting",
+        "Utilize AI-driven voice cycles with variable inserts for high conversion rates",
+        "Monitor and optimize KPIs for improved revenue predictability"
       ]
     }
   ],
@@ -85,35 +85,36 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "14% to 31% reply-to-meeting conversion",
-    "$1.2M qualified pipeline in 4 months"
+    "$1.2M in qualified pipeline in 4 months",
+    "31% reply-to-meeting conversion (up from 14%)",
+    "38% meeting-to-client conversion rate"
   ],
   "icp": {
     "demographics": [
       "Enterprise",
-      "Identity security and verification",
-      "high-stakes and compliance"
+      "professional and financial services firms",
+      "SaaS provider"
     ],
     "messagePillars": [
-      "Risk reduction and compliance",
+      "Integration fit and data quality",
       "Scalability and reliability",
-      "Integration fit and data quality"
+      "Personalization and AI leverage"
     ],
     "channelFocus": [
-      "ABM with executive outreach",
-      "Partner co-sell and marketplace attach"
+      "Partner co-sell and marketplace attach",
+      "Field events for regulated or enterprise buyers"
     ],
     "riskMitigation": [
-      "Legal or compliance objections",
-      "Data access and integration risk"
+      "Data access and integration risk",
+      "Adoption risk"
     ]
   },
   "theme": {
-    "primary": "#330069",
-    "secondary": "#420098",
-    "accent": "#292058"
+    "primary": "#324655",
+    "secondary": "#54C1AC",
+    "accent": "#9DD0C3"
   },
-  "sendsparkUrl": "https://sendspark.com/share/nqp09xxpfrw2uazw3c4oyou7b7c8z4wv"
+  "sendsparkUrl": "https://sendspark.com/share/r9i8a2oux98qlimxslnbarcsg9lwmbwm"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
