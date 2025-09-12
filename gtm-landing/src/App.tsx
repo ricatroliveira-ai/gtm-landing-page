@@ -37,8 +37,8 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
+  const g = parseInt(hex.substring(4, 6), 16);
+  const b = parseInt(hex.substring(6, 8), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
 }
@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Talentful",
-    "role": "Senior GTM Sourcer"
+    "name": "Adobe",
+    "role": "Sr. Channel GTM Product Marketing Manager"
   },
   "challenges": [
     {
-      "title": "Attracting Top Talent in Competitive Market",
+      "title": "Drive Growth in Higher Education Channel",
       "approach": [
-        "Craft persona-based dynamic copy for job listings",
-        "Implement AI-driven voice cycles to increase applicant conversion rates",
-        "Design and deploy trigger-based sequences for candidate engagement"
+        "Craft persona-based dynamic copy for education segment",
+        "Implement trigger-based sequencing for higher education leads",
+        "Operationalize repeatable outbound motions for education audience"
       ]
     },
     {
-      "title": "Deeply Embedding in Client Cultures",
+      "title": "Optimize Channel Reach and Impact",
       "approach": [
-        "Build ICPs and sequenced outreach to understand client nuances",
-        "Apply vertical-specific intros for deeper client connection",
-        "Create agentic revenue systems to capture and score client signals"
+        "Designed agentic revenue systems to capture and route signals efficiently",
+        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
+        "Deployed persona-based dynamic copy for personalized outreach"
       ]
     },
     {
-      "title": "Partnering with Senior Stakeholders Effectively",
+      "title": "Accelerate Growth Through Field Execution",
       "approach": [
-        "Run fast POC cycles with AI agents for quick executive buy-in",
-        "Develop and execute an operator-grade GTM playbook for senior stakeholders",
-        "Track and optimize KPIs to align with executive goals"
+        "Applied role- and vertical-specific intros to raise SQL rate",
+        "Built ICPs and sequenced outreach for structured forecasting",
+        "Lifted meetings per week from 1 to 6 through GTM architecture"
       ]
     }
   ],
@@ -85,33 +85,36 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "31% reply-to-meeting conversion (up from 14%)",
-    "33% SQL rate (up from 22%)"
+    "14% to 31% reply-to-meeting conversion",
+    "0.08% spam complaints",
+    "0.9% unsubscribe rate",
+    "1 to 6 meetings per week"
   ],
   "icp": {
     "demographics": [
-      "SMB focusing on talent acquisition and HR solutions"
+      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
     ],
     "messagePillars": [
-      "Speed to value and time to first outcome",
       "Scalability and reliability",
-      "Integration fit and data quality"
+      "Integration fit and data quality",
+      "Revenue efficiency"
     ],
     "channelFocus": [
-      "Outbound POC to prove value fast",
-      "Community and developer relations for dev-led products"
+      "Partner co-sell and marketplace attach",
+      "ABM with executive outreach"
     ],
     "riskMitigation": [
-      "Adoption risk - may need manager-first enablement and usage goals",
-      "Forecast or ROI skepticism - consider weekly scorecard and exit criteria"
+      "Adoption risk → manager-first enablement, default templates, usage goals",
+      "Data access and integration risk → scoped POC, sandbox, success criteria",
+      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
     ]
   ],
   "theme": {
-    "primary": "#5F3F3F",
-    "secondary": "#F46845",
-    "accent": "#D03814"
+    "primary": "#000000",
+    "secondary": "#FF0000",
+    "accent": "#0500CB"
   },
-  "sendsparkUrl": "https://sendspark.com/share/mqm9wqz3oddzwrwffe3vjmry4c8hu90r"
+  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
