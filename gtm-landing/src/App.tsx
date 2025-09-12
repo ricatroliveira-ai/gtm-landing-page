@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Harmonic Inc",
-    "role": "Telco Fiber Go-To-Market (GTM) Senior Manager"
+    "name": "Splunk",
+    "role": "Leader, Global Platform Specialists, GTM Strategy & Programs"
   },
   "challenges": [
     {
-      "title": "Drive Growth in Fiber Business",
+      "title": "Developing Long-Term Platform GTM Strategy",
       "approach": [
-        "Design tailored GTM architecture for Fiber services",
-        "Implement AI-first execution for targeted outreach",
-        "Utilize forecasting and pipeline hygiene for growth"
+        "Design GTM architecture and playbook for platform expansion",
+        "Implement AI-first execution across multiple channels",
+        "Focus on forecasting and pipeline hygiene for long-term success"
       ]
     },
     {
-      "title": "Expand Market Engagement with Telcos",
+      "title": "Driving Synergy with Cisco's Sales Force",
       "approach": [
-        "Craft targeted GTM strategies for Telco segment",
-        "Execute AI-driven voice cycles for personalized outreach",
-        "Optimize RevOps automation for market expansion"
+        "Develop joint GTM strategies for synergy with Cisco",
+        "Implement AI-driven voice cycles for effective collaboration",
+        "Enhance RevOps automation for streamlined processes"
       ]
     },
     {
-      "title": "Develop Strategic Relationships with Stakeholders",
+      "title": "Scaling Growth Through Joint GTM Strategies",
       "approach": [
-        "Deploy persona-based dynamic copy for relationship building",
-        "Design strategic GTM frameworks for stakeholder engagement",
-        "Track and optimize KPIs for relationship management"
+        "Operationalize repeatable outbound motions to increase meetings per week",
+        "Establish guardrails for increased efficiency and reduced opt-outs",
+        "Deliver operator-grade visibility through dashboards and playbooks"
       ]
     }
   ],
@@ -85,34 +85,33 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$1.2M in qualified pipeline in 4 months",
-    "38% meeting-to-client conversion rate",
-    "14% to 31% reply-to-meeting conversion"
+    "38% meeting-to-client conversion rate sustained",
+    "$431K in early pipeline generated"
   ],
   "icp": {
     "demographics": [
-      "Enterprise, cross-functional buying committee including CTO and IT leaders"
+      "Enterprise, across security, IT, and engineering functions"
     ],
     "messagePillars": [
+      "Risk reduction and compliance",
       "Scalability and reliability",
-      "Integration fit and data quality",
-      "Personalization and AI leverage"
+      "Integration fit and data quality"
     ],
     "channelFocus": [
-      "Outbound POC to prove value fast",
-      "ABM with executive outreach"
+      "ABM with executive outreach",
+      "Partner co-sell and marketplace attach"
     ],
     "riskMitigation": [
-      "Forecast or ROI skepticism",
+      "Legal or compliance objections",
       "Data access and integration risk"
     ]
   },
   "theme": {
-    "primary": "#F4FAFF",
-    "secondary": "#03243D",
-    "accent": "#25B0D9"
+    "primary": "#ED0080",
+    "secondary": "#F16122",
+    "accent": "#F99E1C"
   },
-  "sendsparkUrl": "https://sendspark.com/share/2k03vpgck2wha9mogde7f7il0fpo9wkt"
+  "sendsparkUrl": "https://sendspark.com/share/mr0cs3yt1hw20x5khyfbr45p60fyg2vs"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
@@ -179,7 +178,7 @@ export default function Page() {
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-  A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
+  A GTM leader who ships revenue, not decks.
 </h1>
 
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
