@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "GoodRx",
-    "role": "Director HCP GTM Strategy"
+    "name": "Harmonic Inc",
+    "role": "Telco Fiber Go-To-Market (GTM) Senior Manager"
   },
   "challenges": [
     {
-      "title": "Monetize and Scale HCP Engagement Platforms",
+      "title": "Drive Growth in Fiber Business",
       "approach": [
-        "GTM architecture and playbook design",
-        "AI-first execution across phone, email, and LinkedIn",
-        "Forecast, pipeline hygiene, and RevOps automation"
+        "Design tailored GTM architecture for Fiber services",
+        "Implement AI-first execution for targeted outreach",
+        "Utilize forecasting and pipeline hygiene for growth"
       ]
     },
     {
-      "title": "Refine HCP Commercialization Strategy for Success",
+      "title": "Expand Market Engagement with Telcos",
       "approach": [
-        "Built ICPs and sequenced outreach for structured forecasting and pipeline creation",
-        "Crafted voice-led scripts and email frameworks for increased personalization",
-        "Applied role- and vertical-specific intros to raise SQL rate from 22% to 33%"
+        "Craft targeted GTM strategies for Telco segment",
+        "Execute AI-driven voice cycles for personalized outreach",
+        "Optimize RevOps automation for market expansion"
       ]
     },
     {
-      "title": "Align Cross-Functional Teams for Revenue Growth",
+      "title": "Develop Strategic Relationships with Stakeholders",
       "approach": [
-        "Ran fast POC cycles with AI agents to prove ROI before scaling",
-        "Built account coverage and replenishment programs for predictable reorder cadence",
-        "Led a 16-person commercial team at Embalageral, scaling to $6M ARR with stable retention"
+        "Deploy persona-based dynamic copy for relationship building",
+        "Design strategic GTM frameworks for stakeholder engagement",
+        "Track and optimize KPIs for relationship management"
       ]
     }
   ],
@@ -85,34 +85,34 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
+    "$1.2M in qualified pipeline in 4 months",
     "38% meeting-to-client conversion rate",
-    "16-person commercial team",
-    "$6M ARR with stable retention"
+    "31% reply-to-meeting conversion (up from 14%)"
   ],
   "icp": {
     "demographics": [
-      "Upper mid-market, healthcare"
+      "Enterprise, cross-functional buying committee including CTO and IT leaders"
     ],
     "messagePillars": [
-      "Risk reduction and compliance",
-      "Personalization and AI leverage",
-      "Scalability and reliability"
+      "Scalability and reliability",
+      "Integration fit and data quality",
+      "Personalization and AI leverage"
     ],
     "channelFocus": [
-      "ABM with executive outreach",
-      "Field events for regulated or enterprise buyers"
+      "Outbound POC to prove value fast",
+      "ABM with executive outreach"
     ],
     "riskMitigation": [
-      "Legal or compliance objections",
+      "Forecast or ROI skepticism",
       "Data access and integration risk"
     ]
-  },
+  ],
   "theme": {
-    "primary": "#222222",
-    "secondary": "#3268B9",
-    "accent": "#EA9F41"
+    "primary": "#03243D",
+    "secondary": "#25B0D9",
+    "accent": "#F5ECCC"
   },
-  "sendsparkUrl": "https://sendspark.com/share/yapwiw5xz3dz2xlnjjqpqr9zzpusyktc"
+  "sendsparkUrl": "https://sendspark.com/share/2k03vpgck2wha9mogde7f7il0fpo9wkt"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
