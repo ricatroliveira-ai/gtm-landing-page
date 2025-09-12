@@ -37,7 +37,7 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
+  const g = parseInt(hex.substring(4, 6), 16);
   const b = parseInt(hex.substring(4, 6), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Recorded Future",
-    "role": "Director GTM Analytics and Planning"
+    "name": "Restaurant365",
+    "role": "Senior FP&A Manager (GTM)"
   },
   "challenges": [
     {
-      "title": "Accelerating Revenue Growth Through GTM Strategy",
+      "title": "Optimizing Sales Productivity and Marketing ROI",
       "approach": [
-        "Built and deployed a complete GTM stack that created $1.2M in qualified pipeline in 4 months",
-        "Lifted meetings per week from 1 to 6 by operationalizing repeatable outbound motions",
-        "Led a 16-person commercial team at Embalageral, scaling to $6M ARR with stable retention"
+        "Implement GTM architecture and playbook design",
+        "Execute AI-first strategies for phone, email, and LinkedIn",
+        "Utilize forecasting, pipeline hygiene, and RevOps automation"
       ]
     },
     {
-      "title": "Optimizing GTM Performance Metrics",
+      "title": "Becoming the Go-To Expert on GTM KPIs",
       "approach": [
-        "Applied role- and vertical-specific intros to raise SQL rate from 22% to 33%",
-        "Crafted voice-led scripts and email frameworks that scaled personalization without raising complaint rates",
-        "Used intro and preview line strategy to drive consistently high meeting conversion with unsubscribe rates under 1%"
+        "Build GTM strategies tied to specific KPIs",
+        "Implement AI-driven GTM systems for data-driven decisions",
+        "Track and optimize KPIs across the revenue cycle"
       ]
     },
     {
-      "title": "Empowering Cross-Functional Stakeholders with Insights",
+      "title": "Delivering Mission-Critical Reporting with Precision",
       "approach": [
-        "Implemented trigger-based sequencing tied to hiring, funding, and backlog signals, lifting reply rates from 2% to 23%",
-        "Delivered dashboards, playbooks, and SDR review queues that provided operator-grade visibility",
-        "Orchestrated GTM workflows across Make.com, Apify, RapidAPI, Apollo, Clay, VAPI Voice, ensuring lead hygiene and pipeline visibility"
+        "Create AI-driven reporting systems for precision",
+        "Utilize trigger-based sequencing for timely insights",
+        "Implement frameworks to improve reporting accuracy"
       ]
     }
   ],
@@ -85,33 +85,34 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$1.2M qualified pipeline in 4 months",
-    "31% reply-to-meeting conversion (up from 14%)"
+    "6x increase in meetings per week",
+    "1 to 6 meetings per week",
+    "$431K in early pipeline"
   ],
   "icp": {
     "demographics": [
-      "Upper mid-market cybersecurity company specializing in proactive and predictive security intelligence"
+      "SMB restaurant management software, targeting restaurant owners, CFO, Ops Manager"
     ],
     "messagePillars": [
-      "Risk reduction and compliance",
+      "Revenue efficiency",
       "Integration fit and data quality",
-      "Scalability and reliability"
+      "Speed to value and time to first outcome"
     ],
     "channelFocus": [
       "Outbound POC to prove value fast",
       "Partner co-sell and marketplace attach"
     ],
     "riskMitigation": [
-      "Legal or compliance objections",
+      "Adoption risk",
       "Forecast or ROI skepticism"
     ]
   },
   "theme": {
-    "primary": "#3166A2",
-    "secondary": "#03B450",
-    "accent": "#EE6E73"
+    "primary": "#0065C5",
+    "secondary": "#D02027",
+    "accent": "#82ACB7"
   },
-  "sendsparkUrl": "https://sendspark.com/share/s5kfr936q9zdhxrst6aqkbkn1ovaggir"
+  "sendsparkUrl": "https://sendspark.com/share/c3k1n91chvnpndksc4mohe6jc0ldfdyo"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
