@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Splunk",
-    "role": "Leader, Global Platform Specialists, GTM Strategy & Programs"
+    "name": "Talentful",
+    "role": "Senior GTM Sourcer"
   },
   "challenges": [
     {
-      "title": "Developing Long-Term Platform GTM Strategy",
+      "title": "Attracting Top Talent in Competitive Market",
       "approach": [
-        "Design GTM architecture and playbook for platform expansion",
-        "Implement AI-first execution across multiple channels",
-        "Focus on forecasting and pipeline hygiene for long-term success"
+        "Craft persona-based dynamic copy for job listings",
+        "Implement AI-driven voice cycles to increase applicant conversion rates",
+        "Design and deploy trigger-based sequences for candidate engagement"
       ]
     },
     {
-      "title": "Driving Synergy with Cisco's Sales Force",
+      "title": "Deeply Embedding in Client Cultures",
       "approach": [
-        "Develop joint GTM strategies for synergy with Cisco",
-        "Implement AI-driven voice cycles for effective collaboration",
-        "Enhance RevOps automation for streamlined processes"
+        "Build ICPs and sequenced outreach to understand client nuances",
+        "Apply vertical-specific intros for deeper client connection",
+        "Create agentic revenue systems to capture and score client signals"
       ]
     },
     {
-      "title": "Scaling Growth Through Joint GTM Strategies",
+      "title": "Partnering with Senior Stakeholders Effectively",
       "approach": [
-        "Operationalize repeatable outbound motions to increase meetings per week",
-        "Establish guardrails for increased efficiency and reduced opt-outs",
-        "Deliver operator-grade visibility through dashboards and playbooks"
+        "Run fast POC cycles with AI agents for quick executive buy-in",
+        "Develop and execute an operator-grade GTM playbook for senior stakeholders",
+        "Track and optimize KPIs to align with executive goals"
       ]
     }
   ],
@@ -85,34 +85,33 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$431K in early pipeline generated",
-    "38% meeting-to-client conversion rate",
-    "Seven-figure pipeline created in months"
+    "31% reply-to-meeting conversion (up from 14%)",
+    "33% SQL rate (up from 22%)"
   ],
   "icp": {
     "demographics": [
-      "Enterprise, across security, IT, and engineering functions"
+      "SMB focusing on talent acquisition and HR solutions"
     ],
     "messagePillars": [
-      "Risk reduction and compliance",
+      "Speed to value and time to first outcome",
       "Scalability and reliability",
       "Integration fit and data quality"
     ],
     "channelFocus": [
-      "ABM with executive outreach",
-      "Partner co-sell and marketplace attach"
+      "Outbound POC to prove value fast",
+      "Community and developer relations for dev-led products"
     ],
     "riskMitigation": [
-      "Legal or compliance objections",
-      "Data access and integration risk"
+      "Adoption risk - may need manager-first enablement and usage goals",
+      "Forecast or ROI skepticism - consider weekly scorecard and exit criteria"
     ]
-  },
+  ],
   "theme": {
-    "primary": "#0C1724",
-    "secondary": "#ED0080",
-    "accent": "#959D9F"
+    "primary": "#5F3F3F",
+    "secondary": "#F46845",
+    "accent": "#D03814"
   },
-  "sendsparkUrl": "https://sendspark.com/share/mr0cs3yt1hw20x5khyfbr45p60fyg2vs"
+  "sendsparkUrl": "https://sendspark.com/share/mqm9wqz3oddzwrwffe3vjmry4c8hu90r"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
