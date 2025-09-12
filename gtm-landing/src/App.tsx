@@ -37,7 +37,7 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(4, 6), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
   const b = parseInt(hex.substring(4, 6), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "CrowdStrike",
-    "role": "GTM Technology Operations Director (Remote)"
+    "name": "GoodRx",
+    "role": "Director HCP GTM Strategy"
   },
   "challenges": [
     {
-      "title": "Streamlining GTM Technology Operations for Scalability",
+      "title": "Monetize and Scale HCP Engagement Platforms",
       "approach": [
-        "Designing scalable GTM architecture and playbooks",
-        "Implementing AI-first execution across channels",
-        "Ensuring forecast accuracy and pipeline hygiene"
+        "GTM architecture and playbook design",
+        "AI-first execution across phone, email, and LinkedIn",
+        "Forecast, pipeline hygiene, and RevOps automation"
       ]
     },
     {
-      "title": "Identifying and Resolving Process Inefficiencies",
+      "title": "Refine HCP Commercialization Strategy for Success",
       "approach": [
-        "Implementing frameworks like MEDDPICC and TAS",
-        "Lifting reply rates from 2% to 23% through trigger-based sequencing",
-        "Orchestrating GTM workflows for lead hygiene and visibility"
+        "Built ICPs and sequenced outreach for structured forecasting and pipeline creation",
+        "Crafted voice-led scripts and email frameworks for increased personalization",
+        "Applied role- and vertical-specific intros to raise SQL rate from 22% to 33%"
       ]
     },
     {
-      "title": "Driving Revenue Growth Through Operational Excellence",
+      "title": "Align Cross-Functional Teams for Revenue Growth",
       "approach": [
-        "Deploying AI-driven voice cycles for high conversion rates",
-        "Creating scaled personalization systems for increased reply rates",
-        "Designing and executing fast POC cycles for ROI"
+        "Ran fast POC cycles with AI agents to prove ROI before scaling",
+        "Built account coverage and replenishment programs for predictable reorder cadence",
+        "Led a 16-person commercial team at Embalageral, scaling to $6M ARR with stable retention"
       ]
     }
   ],
@@ -85,22 +85,22 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$1.2M in qualified pipeline in 4 months",
-    "2% to 23% reply rate lift",
-    "14% to 31% reply-to-meeting conversion"
+    "38% meeting-to-client conversion rate",
+    "16-person commercial team",
+    "$6M ARR with stable retention"
   ],
   "icp": {
     "demographics": [
-      "Enterprise cybersecurity leader focusing on stopping breaches with cloud-native platform"
+      "Upper mid-market, healthcare"
     ],
     "messagePillars": [
       "Risk reduction and compliance",
-      "Scalability and reliability",
-      "Integration fit and data quality"
+      "Personalization and AI leverage",
+      "Scalability and reliability"
     ],
     "channelFocus": [
-      "Outbound POC to prove value fast",
-      "ABM with executive outreach"
+      "ABM with executive outreach",
+      "Field events for regulated or enterprise buyers"
     ],
     "riskMitigation": [
       "Legal or compliance objections",
@@ -108,11 +108,11 @@ const RAW_CONFIG = {
     ]
   },
   "theme": {
-    "primary": "#292929",
-    "secondary": "#FC0000",
-    "accent": "#B60000"
+    "primary": "#222222",
+    "secondary": "#3268B9",
+    "accent": "#EA9F41"
   },
-  "sendsparkUrl": "https://sendspark.com/share/rcgn52z134f5wx7xlmbi33pon0tvu829"
+  "sendsparkUrl": "https://sendspark.com/share/yapwiw5xz3dz2xlnjjqpqr9zzpusyktc"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
@@ -259,7 +259,7 @@ export default function Page() {
           <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
             The Real Reason You're Hiring This Role
           </h2>
-         <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
+          <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
   It's not just about finding a GTM leader. You need someone who can solve{" "}
   <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
   <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
