@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Procore Technologies",
-    "role": "Senior GTM Enablement Manager, Leadership Development"
+    "name": "Recorded Future",
+    "role": "Director GTM Analytics and Planning"
   },
   "challenges": [
     {
-      "title": "Identify Opportunities for Growth Through Data-Driven Insights",
+      "title": "Accelerating Revenue Growth Through GTM Strategy",
       "approach": [
-        "Utilize AI-driven revenue systems for quick signal capture and scoring",
-        "Apply MEDDPICC framework to enhance forecasting and qualification accuracy",
-        "Implement trigger-based sequencing tied to key signals for improved reply rates"
+        "Built and deployed a complete GTM stack that created $1.2M in qualified pipeline in 4 months",
+        "Lifted meetings per week from 1 to 6 by operationalizing repeatable outbound motions",
+        "Led a 16-person commercial team at Embalageral, scaling to $6M ARR with stable retention"
       ]
     },
     {
-      "title": "Design and Evolve Leadership Development Programs",
+      "title": "Optimizing GTM Performance Metrics",
       "approach": [
-        "Deploy persona-based dynamic copy for training materials",
-        "Craft voice-led scripts and email frameworks for training delivery",
-        "Generate operator-grade deliverables for program execution"
+        "Applied role- and vertical-specific intros to raise SQL rate from 22% to 33%",
+        "Crafted voice-led scripts and email frameworks that scaled personalization without raising complaint rates",
+        "Used intro and preview line strategy to drive consistently high meeting conversion with unsubscribe rates under 1%"
       ]
     },
     {
-      "title": "Customize and Deliver Leadership Training",
+      "title": "Empowering Cross-Functional Stakeholders with Insights",
       "approach": [
-        "Apply role-specific intros to training materials for improved engagement",
-        "Craft personalized training content for different leadership levels",
-        "Use structured forecasting to enhance training customization"
+        "Implemented trigger-based sequencing tied to hiring, funding, and backlog signals, lifting reply rates from 2% to 23%",
+        "Delivered dashboards, playbooks, and SDR review queues that provided operator-grade visibility",
+        "Orchestrated GTM workflows across Make.com, Apify, RapidAPI, Apollo, Clay, VAPI Voice, ensuring lead hygiene and pipeline visibility"
       ]
     }
   ],
@@ -85,33 +85,33 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "6x increase in meetings",
-    "0.08% spam complaints"
+    "$1.2M qualified pipeline in 4 months",
+    "31% reply-to-meeting conversion (up from 14%)"
   ],
   "icp": {
     "demographics": [
-      "Enterprise, construction industry, cloud-based construction management software"
+      "Upper mid-market cybersecurity company specializing in proactive and predictive security intelligence"
     ],
     "messagePillars": [
       "Risk reduction and compliance",
-      "Scalability and reliability",
-      "Speed to value and time to first outcome"
+      "Integration fit and data quality",
+      "Scalability and reliability"
     ],
     "channelFocus": [
-      "Partner co-sell and marketplace attach",
-      "Field events for regulated or enterprise buyers"
+      "Outbound POC to prove value fast",
+      "Partner co-sell and marketplace attach"
     ],
     "riskMitigation": [
-      "Adoption risk",
+      "Legal or compliance objections",
       "Forecast or ROI skepticism"
     ]
   },
   "theme": {
-    "primary": "#8A6D3B",
-    "secondary": "#F27152",
-    "accent": "#FF5200"
+    "primary": "#3166A2",
+    "secondary": "#03B450",
+    "accent": "#EE6E73"
   },
-  "sendsparkUrl": "https://sendspark.com/share/tue2mkj5z438qe5e1i10cjsx9uo4a9gn"
+  "sendsparkUrl": "https://sendspark.com/share/s5kfr936q9zdhxrst6aqkbkn1ovaggir"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
