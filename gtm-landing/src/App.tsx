@@ -49,30 +49,33 @@ const toList = (v: string | string[] | undefined): string[] =>
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
-  "company": { "name": "Adobe", "role": "Sr. Channel GTM Product Marketing Manager" },
+  "company": {
+    "name": "CrowdStrike",
+    "role": "GTM Technology Operations Director (Remote)"
+  },
   "challenges": [
     {
-      "title": "Drive Growth in Higher Education Channel",
+      "title": "Streamlining GTM Technology Operations for Scalability",
       "approach": [
-        "Craft persona-based dynamic copy for education segment",
-        "Implement trigger-based sequencing for higher education leads",
-        "Operationalize repeatable outbound motions for education audience"
+        "Designing scalable GTM architecture and playbooks",
+        "Implementing AI-first execution across channels",
+        "Ensuring forecast accuracy and pipeline hygiene"
       ]
     },
     {
-      "title": "Optimize Channel Reach and Impact",
+      "title": "Identifying and Resolving Process Inefficiencies",
       "approach": [
-        "Designed agentic revenue systems to capture and route signals efficiently",
-        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
-        "Deployed persona-based dynamic copy for personalized outreach"
+        "Implementing frameworks like MEDDPICC and TAS",
+        "Lifting reply rates from 2% to 23% through trigger-based sequencing",
+        "Orchestrating GTM workflows for lead hygiene and visibility"
       ]
     },
     {
-      "title": "Accelerate Growth Through Field Execution",
+      "title": "Driving Revenue Growth Through Operational Excellence",
       "approach": [
-        "Applied role- and vertical-specific intros to raise SQL rate",
-        "Built ICPs and sequenced outreach for structured forecasting",
-        "Lifted meetings per week from 1 to 6 through GTM architecture"
+        "Deploying AI-driven voice cycles for high conversion rates",
+        "Creating scaled personalization systems for increased reply rates",
+        "Designing and executing fast POC cycles for ROI"
       ]
     }
   ],
@@ -82,32 +85,34 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "31% reply-to-meeting conversion (up from 14%)",
-    "6x increase in meetings",
-    "0.08% spam complaint rate",
-    "0.9% unsubscribe rate"
+    "$1.2M in qualified pipeline in 4 months",
+    "2% to 23% reply rate increase",
+    "14% to 31% reply-to-meeting conversion"
   ],
   "icp": {
     "demographics": [
-      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
+      "Enterprise cybersecurity leader focusing on stopping breaches with cloud-native platform"
     ],
     "messagePillars": [
+      "Risk reduction and compliance",
       "Scalability and reliability",
-      "Integration fit and data quality",
-      "Revenue efficiency"
+      "Integration fit and data quality"
     ],
     "channelFocus": [
-      "Partner co-sell and marketplace attach",
+      "Outbound POC to prove value fast",
       "ABM with executive outreach"
     ],
     "riskMitigation": [
-      "Adoption risk → manager-first enablement, default templates, usage goals",
-      "Data access and integration risk → scoped POC, sandbox, success criteria",
-      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
+      "Legal or compliance objections",
+      "Data access and integration risk"
     ]
   },
-  "theme": { "primary": "#000000", "secondary": "#FFFFFF", "accent": "#FF0000" },
-  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
+  "theme": {
+    "primary": "#FC0000",
+    "secondary": "#292929",
+    "accent": "#FFFFFF"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/rcgn52z134f5wx7xlmbi33pon0tvu829"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
