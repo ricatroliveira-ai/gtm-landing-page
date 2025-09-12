@@ -48,67 +48,7 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {
-  "company": { "name": "Adobe", "role": "Sr. Channel GTM Product Marketing Manager" },
-  "challenges": [
-    {
-      "title": "Drive Growth in Higher Education Channel",
-      "approach": [
-        "Craft persona-based dynamic copy for education segment",
-        "Implement trigger-based sequencing for higher education leads",
-        "Operationalize repeatable outbound motions for education audience"
-      ]
-    },
-    {
-      "title": "Optimize Channel Reach and Impact",
-      "approach": [
-        "Designed agentic revenue systems to capture and route signals efficiently",
-        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
-        "Deployed persona-based dynamic copy for personalized outreach"
-      ]
-    },
-    {
-      "title": "Accelerate Growth Through Field Execution",
-      "approach": [
-        "Applied role- and vertical-specific intros to raise SQL rate",
-        "Built ICPs and sequenced outreach for structured forecasting",
-        "Lifted meetings per week from 1 to 6 through GTM architecture"
-      ]
-    }
-  ],
-  "skills": [
-    "GTM architecture and playbook design",
-    "AI-first execution across phone, email, and LinkedIn",
-    "Forecast, pipeline hygiene, and RevOps automation"
-  ],
-  "trackRecord": [
-    "31% reply-to-meeting conversion (up from 14%)",
-    "6x increase in meetings",
-    "0.08% spam complaint rate",
-    "0.9% unsubscribe rate"
-  ],
-  "icp": {
-    "demographics": [
-      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
-    ],
-    "messagePillars": [
-      "Scalability and reliability",
-      "Integration fit and data quality",
-      "Revenue efficiency"
-    ],
-    "channelFocus": [
-      "Partner co-sell and marketplace attach",
-      "ABM with executive outreach"
-    ],
-    "riskMitigation": [
-      "Adoption risk → manager-first enablement, default templates, usage goals",
-      "Data access and integration risk → scoped POC, sandbox, success criteria",
-      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
-    ]
-  },
-  "theme": { "primary": "#000000", "secondary": "#FFFFFF", "accent": "#FF0000" },
-  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
-} as unknown as GTMPageConfig;
+const RAW_CONFIG = {   "company": {     "name": "Adobe",     "role": "Sr. Channel GTM Product Marketing Manager"   },   "challenges": [     {       "title": "Drive Growth in Higher Education Channel",       "approach": [         "Craft persona-based dynamic copy for education segment",         "Implement trigger-based sequencing for higher education leads",         "Operationalize repeatable outbound motions for education audience"       ]     },     {       "title": "Optimize Channel Reach and Impact",       "approach": [         "Designed agentic revenue systems to capture and route signals efficiently",         "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",         "Deployed persona-based dynamic copy for personalized outreach"       ]     },     {       "title": "Accelerate Growth Through Field Execution",       "approach": [         "Applied role- and vertical-specific intros to raise SQL rate",         "Built ICPs and sequenced outreach for structured forecasting",         "Lifted meetings per week from 1 to 6 through GTM architecture"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "31% reply-to-meeting conversion (up from 14%)",     "6x increase in meetings",     "0.08% spam complaint rate",     "0.9% unsubscribe rate"   ],   "icp": {     "demographics": [       "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."     ],     "messagePillars": [       "Scalability and reliability",       "Integration fit and data quality",       "Revenue efficiency"     ],     "channelFocus": [       "Partner co-sell and marketplace attach",       "ABM with executive outreach"     ],     "riskMitigation": [       "Adoption risk → manager-first enablement, default templates, usage goals",       "Data access and integration risk → scoped POC, sandbox, success criteria",       "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"     ]   },   "theme": {     "primary": "#000000",     "secondary": "#FFFFFF",     "accent": "#FF0000"   },   "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10" } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
@@ -372,12 +312,13 @@ export default function Page() {
         </div>
       </section>
 
+{/* LinkedIn section */}
 <section className="py-20 px-4 bg-white">
   <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-4xl font-black mb-4" style=#0F172A>
+    <h2 className="text-4xl font-black mb-4" style={textNearBlack}>
       Get To Know Me
     </h2>
-    <h3 className="text-xl font-medium mb-12" style=rgba(15,23,42,0.85)>
+    <h3 className="text-xl font-medium mb-12" style={textSlate85}>
       Here's My LinkedIn
     </h3>
 
@@ -388,10 +329,10 @@ export default function Page() {
           alt="Ricardo Oliveira LinkedIn Profile"
           className="w-32 h-32 rounded-full shadow-lg mx-auto mb-6"
         />
-        <h4 className="text-2xl font-bold mb-2" style=#0F172A>
+        <h4 className="text-2xl font-bold mb-2" style={textNearBlack}>
           Ricardo Oliveira
         </h4>
-        <p className="text-lg" style=rgba(15,23,42,0.85)>
+        <p className="text-lg" style={textSlate85}>
           GTM Strategy & Revenue Operations Leader
         </p>
       </div>
