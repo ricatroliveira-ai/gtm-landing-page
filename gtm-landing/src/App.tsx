@@ -37,7 +37,7 @@ export type GTMPageConfig = {
 function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
   const hex = bgHex.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(4, 6), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
   const b = parseInt(hex.substring(4, 6), 16);
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
   return yiq >= 128 ? "#000000" : "#FFFFFF";
@@ -50,32 +50,32 @@ const toList = (v: string | string[] | undefined): string[] =>
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Restaurant365",
-    "role": "Senior FP&A Manager (GTM)"
+    "name": "Splunk",
+    "role": "Leader, Global Platform Specialists, GTM Strategy & Programs"
   },
   "challenges": [
     {
-      "title": "Optimizing Sales Productivity and Marketing ROI",
+      "title": "Developing Long-Term Platform GTM Strategy",
       "approach": [
-        "Implement GTM architecture and playbook design",
-        "Execute AI-first strategies for phone, email, and LinkedIn",
-        "Utilize forecasting, pipeline hygiene, and RevOps automation"
+        "Design GTM architecture and playbook for platform expansion",
+        "Implement AI-first execution across multiple channels",
+        "Focus on forecasting and pipeline hygiene for long-term success"
       ]
     },
     {
-      "title": "Becoming the Go-To Expert on GTM KPIs",
+      "title": "Driving Synergy with Cisco's Sales Force",
       "approach": [
-        "Build GTM strategies tied to specific KPIs",
-        "Implement AI-driven GTM systems for data-driven decisions",
-        "Track and optimize KPIs across the revenue cycle"
+        "Develop joint GTM strategies for synergy with Cisco",
+        "Implement AI-driven voice cycles for effective collaboration",
+        "Enhance RevOps automation for streamlined processes"
       ]
     },
     {
-      "title": "Delivering Mission-Critical Reporting with Precision",
+      "title": "Scaling Growth Through Joint GTM Strategies",
       "approach": [
-        "Create AI-driven reporting systems for precision",
-        "Utilize trigger-based sequencing for timely insights",
-        "Implement frameworks to improve reporting accuracy"
+        "Operationalize repeatable outbound motions to increase meetings per week",
+        "Establish guardrails for increased efficiency and reduced opt-outs",
+        "Deliver operator-grade visibility through dashboards and playbooks"
       ]
     }
   ],
@@ -85,34 +85,34 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "6x increase in meetings per week",
-    "1 to 6 meetings per week",
-    "$431K in early pipeline"
+    "$431K in early pipeline generated",
+    "38% meeting-to-client conversion rate",
+    "Seven-figure pipeline created in months"
   ],
   "icp": {
     "demographics": [
-      "SMB restaurant management software, targeting restaurant owners, CFO, Ops Manager"
+      "Enterprise, across security, IT, and engineering functions"
     ],
     "messagePillars": [
-      "Revenue efficiency",
-      "Integration fit and data quality",
-      "Speed to value and time to first outcome"
+      "Risk reduction and compliance",
+      "Scalability and reliability",
+      "Integration fit and data quality"
     ],
     "channelFocus": [
-      "Outbound POC to prove value fast",
+      "ABM with executive outreach",
       "Partner co-sell and marketplace attach"
     ],
     "riskMitigation": [
-      "Adoption risk",
-      "Forecast or ROI skepticism"
+      "Legal or compliance objections",
+      "Data access and integration risk"
     ]
   },
   "theme": {
-    "primary": "#0065C5",
-    "secondary": "#D02027",
-    "accent": "#82ACB7"
+    "primary": "#0C1724",
+    "secondary": "#ED0080",
+    "accent": "#959D9F"
   },
-  "sendsparkUrl": "https://sendspark.com/share/c3k1n91chvnpndksc4mohe6jc0ldfdyo"
+  "sendsparkUrl": "https://sendspark.com/share/mr0cs3yt1hw20x5khyfbr45p60fyg2vs"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
