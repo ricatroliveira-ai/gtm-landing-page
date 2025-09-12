@@ -48,7 +48,70 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {   "company": {     "name": "CrowdStrike",     "role": "GTM Technology Operations Director (Remote)"   },   "challenges": [     {       "title": "Streamlining GTM Technology Operations for Scalability",       "approach": [         "Designing scalable GTM architecture and playbooks",         "Implementing AI-first execution across channels",         "Ensuring forecast accuracy and pipeline hygiene"       ]     },     {       "title": "Identifying and Resolving Process Inefficiencies",       "approach": [         "Implementing frameworks like MEDDPICC and TAS",         "Lifting reply rates from 2% to 23% through trigger-based sequencing",         "Orchestrating GTM workflows for lead hygiene and visibility"       ]     },     {       "title": "Driving Revenue Growth Through Operational Excellence",       "approach": [         "Deploying AI-driven voice cycles for high conversion rates",         "Creating scaled personalization systems for increased reply rates",         "Designing and executing fast POC cycles for ROI"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "$1.2M in qualified pipeline in 4 months",     "2% to 23% reply rate increase",     "14% to 31% reply-to-meeting conversion"   ],   "icp": {     "demographics": [       "Enterprise cybersecurity leader focusing on stopping breaches with cloud-native platform"     ],     "messagePillars": [       "Risk reduction and compliance",       "Scalability and reliability",       "Integration fit and data quality"     ],     "channelFocus": [       "Outbound POC to prove value fast",       "ABM with executive outreach"     ],     "riskMitigation": [       "Legal or compliance objections",       "Data access and integration risk"     ]   },   "theme": {     "primary": "#FC0000",     "secondary": "#292929",     "accent": "#FFFFFF"   },   "sendsparkUrl": "https://sendspark.com/share/rcgn52z134f5wx7xlmbi33pon0tvu829" } as unknown as GTMPageConfig;
+const RAW_CONFIG = {
+  "company": {
+    "name": "Medallia",
+    "role": "Senior Solutions Architect, Salesforce & GTM Apps"
+  },
+  "challenges": [
+    {
+      "title": "Enhancing Salesforce Ecosystem for Scalability",
+      "approach": [
+        "Design tailored GTM architecture and playbook",
+        "Implement AI-first execution across multiple channels",
+        "Ensure forecast accuracy and pipeline hygiene"
+      ]
+    },
+    {
+      "title": "Optimizing Business Process Efficiency and Accuracy",
+      "approach": [
+        "Implement RevOps automation for process optimization",
+        "Apply frameworks for structured forecasting and qualification",
+        "Utilize AI agents for revenue signal capture and routing"
+      ]
+    },
+    {
+      "title": "Streamlining Integrations for Unified Customer Data",
+      "approach": [
+        "Design GTM architecture for unified data",
+        "Apply AI-first execution to integration workflows",
+        "Enforce pipeline hygiene via RevOps automation"
+      ]
+    }
+  ],
+  "skills": [
+    "GTM architecture and playbook design",
+    "AI-first execution across phone, email, and LinkedIn",
+    "Forecast, pipeline hygiene, and RevOps automation"
+  ],
+  "trackRecord": [
+    "$1.2M in qualified pipeline in 4 months"
+  ],
+  "icp": {
+    "demographics": [
+      "Enterprise, cross-functional buying committee including CMO, CTO, and Head of Customer Experience"
+    ],
+    "messagePillars": [
+      "Integration fit and data quality",
+      "Scalability and reliability",
+      "Personalization and AI leverage"
+    ],
+    "channelFocus": [
+      "ABM with executive outreach",
+      "Partner co-sell and marketplace attach"
+    ],
+    "riskMitigation": [
+      "Data access and integration risk – scoped POC, sandbox, success criteria",
+      "Adoption risk – manager-first enablement, default templates, usage goals"
+    ]
+  ],
+  "theme": {
+    "primary": "#F49740",
+    "secondary": "#4050C6",
+    "accent": "#FFFFFF"
+  },
+  "sendsparkUrl": "https://sendspark.com/share/ml53dxzwkfu539caf5lur9mtkv4ui4ok"
+} as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
@@ -63,7 +126,6 @@ const CONFIG: GTMPageConfig = {
 export default function Page() {
   const { company, challenges, icp, theme, sendsparkUrl } = CONFIG;
 
-  // --- Global values & styles ---
   const heroTextColor = pickTextFor(theme.primary);
   const gradient = `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`;
   const calUrl = "https://calendly.com/checkaipulse/30min";
@@ -112,7 +174,6 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* ============================== HERO ============================== */}
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
@@ -159,35 +220,34 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ============================== STATS ============================== */}
-{/* 2) White background; subheader+icons+stats in accent */}
-<section className="py-20 px-4" style={whiteBg}>
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
-      The Numbers Speak For Themselves
-    </h2>
-    <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
-      Some Career Highlights
-    </h3>
+      {/* 2) White background; subheader+icons+stats in accent */}
+      <section className="py-20 px-4" style={whiteBg}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
+            The Numbers Speak For Themselves
+          </h2>
+          <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
+            Some Career Highlights
+          </h3>
 
-    <div className="grid md:grid-cols-4 gap-8">
-      {[
-        { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
-        { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
-        { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
-        { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
-      ].map(({ Icon, stat, label, sub }, i) => (
-        <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
-          <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
-          <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
-          <div className="font-medium" style={textSlate90}>{label}</div>
-          <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
+              { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
+              { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
+              { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
+            ].map(({ Icon, stat, label, sub }, i) => (
+              <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+                <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
+                <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
+                <div className="font-medium" style={primaryColorStyle}>{label}</div>
+                <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-{/*============================== CHALLENGES ============================== */}
+      </section>
+
       {/* 3) Accent highlight in sentence; card titles accent */}
       <section className="py-20 px-4 bg-background">
         <div className="max-w-4xl mx-auto">
@@ -195,10 +255,10 @@ export default function Page() {
             The Real Reason You're Hiring This Role
           </h2>
           <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-            It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
-            <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
-            <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
-            <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
+            It's not just about finding a GTM leader. <span style={primaryColorStyle}>You need someone who can solve</span>{" "}
+            <strong style={accentColorStyle}>{challenges[0]?.title}</strong>,{" "}
+            <strong style={accentColorStyle}>{challenges[1]?.title}</strong> and{" "}
+            <strong style={accentColorStyle}>{challenges[2]?.title}</strong> fast.
             <span className="block mt-2">Here's exactly how I'd approach each.</span>
           </p>
 
@@ -222,7 +282,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ============================== 30-60-90 PLAN ============================== */}
       {/* 4) Section BG accent, cards white, text black, icons accent, day titles accent */}
       <section className="py-20 px-4" style={accentBgStyle}>
         <div className="max-w-6xl mx-auto">
@@ -265,7 +324,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ============================== HYPOTHESIS ============================== */}
       {/* 5) Hypothesis section: BG white; card titles/icons accent; text black */}
       <section className="py-20 px-4" style={whiteBg}>
         <div className="max-w-4xl mx-auto">
@@ -317,46 +375,44 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ============================== LINKEDIN PROFILE ============================== */}
-      {/* LinkedIn section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-black mb-4" style={textNearBlack}>
-            Get To Know Me
-          </h2>
-          <h3 className="text-xl font-medium mb-12" style={textSlate85}>
-            Here's My LinkedIn
-          </h3>
+{/* LinkedIn section */}
+<section className="py-20 px-4 bg-white">
+  <div className="max-w-4xl mx-auto text-center">
+    <h2 className="text-4xl font-black mb-4" style={textNearBlack}>
+      Get To Know Me
+    </h2>
+    <h3 className="text-xl font-medium mb-12" style={textSlate85}>
+      Here's My LinkedIn
+    </h3>
 
-          <div className="flex flex-col items-center">
-            <div className="mb-8">
-              <img
-                src="https://raw.githubusercontent.com/ricatroliveira-ai/gtm-landing-page/main/profile_li.png"
-                alt="Ricardo Oliveira LinkedIn Profile"
-                className="w-32 h-32 rounded-full shadow-lg mx-auto mb-6"
-              />
-              <h4 className="text-2xl font-bold mb-2" style={textNearBlack}>
-                Ricardo Oliveira
-              </h4>
-              <p className="text-lg" style={textSlate85}>
-                GTM Strategy & Revenue Operations Leader
-              </p>
-            </div>
+    <div className="flex flex-col items-center">
+      <div className="mb-8">
+        <img
+          src="https://raw.githubusercontent.com/ricatroliveira-ai/gtm-landing-page/main/profile_li.png"
+          alt="Ricardo Oliveira LinkedIn Profile"
+          className="w-32 h-32 rounded-full shadow-lg mx-auto mb-6"
+        />
+        <h4 className="text-2xl font-bold mb-2" style={textNearBlack}>
+          Ricardo Oliveira
+        </h4>
+        <p className="text-lg" style={textSlate85}>
+          GTM Strategy & Revenue Operations Leader
+        </p>
+      </div>
 
-            <button
-              onClick={() => window.open("https://www.linkedin.com/in/ricatroliveira")}
-              className="px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-[#0077B5] text-white"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.46c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-              Connect on LinkedIn
-            </button>
-          </div>
-        </div>
-      </section>
+      <button
+        onClick={() => window.open("https://www.linkedin.com/in/ricatroliveira")}
+        className="px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-[#0077B5] text-white"
+      >
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.46c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+        Connect on LinkedIn
+      </button>
+    </div>
+  </div>
+</section>
 
-      {/* ============================== CTA ============================== */}
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black mb-6">Worth exploring how I could bring these results to {company.name}?</h2>
@@ -372,7 +428,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ============================== FOOTER ============================== */}
       <footer className="py-8 px-4 text-center bg-secondary text-secondary-foreground">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm opacity-80">
