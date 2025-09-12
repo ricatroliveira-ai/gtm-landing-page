@@ -80,9 +80,7 @@ export default function Page() {
   const overlay25: React.CSSProperties = { background: "rgba(0,0,0,0.25)" };
   const overlay20: React.CSSProperties = { background: "rgba(0,0,0,0.2)" };
 
-  const lightBg: React.CSSProperties = { background: "#FFF7F3" };
   const textNearBlack: React.CSSProperties = { color: "#0F172A" };
-  const textBlack: React.CSSProperties = { color: "#0A0A0A" };
   const textSlate70: React.CSSProperties = { color: "rgba(15,23,42,0.7)" };
   const textSlate85: React.CSSProperties = { color: "rgba(15,23,42,0.85)" };
   const textSlate90: React.CSSProperties = { color: "rgba(15,23,42,0.9)" };
@@ -96,10 +94,15 @@ export default function Page() {
     padding: "2rem"
   };
 
-  const secondaryBg: React.CSSProperties = { background: theme.secondary, color: pickTextFor(theme.secondary) };
-  const onSecondary: React.CSSProperties = { color: pickTextFor(theme.secondary) };
   const white85: React.CSSProperties = { color: "rgba(255,255,255,0.85)" };
-  const darkCard: React.CSSProperties = { background: "#334155", borderRadius: "0.75rem", padding: "2rem" };
+
+  // Accent-driven styles for requested tweaks
+  const accentColorStyle: React.CSSProperties = { color: theme.accent };
+  const accentBgStyle: React.CSSProperties = { background: theme.accent, color: pickTextFor(theme.accent) };
+  const onAccent: React.CSSProperties = { color: pickTextFor(theme.accent) };
+  const whiteBg: React.CSSProperties = { background: "#FFFFFF" };
+  const blackText: React.CSSProperties = { color: "#000000" };
+  const planCard: React.CSSProperties = { background: "#FFFFFF", color: "#000000", borderRadius: "0.75rem", padding: "2rem" };
 
   const revenueSpanStyle: React.CSSProperties = {
     color: theme.primary === "#FFFFFF" ? "#000" : "#fff",
@@ -111,9 +114,8 @@ export default function Page() {
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-  A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
-</h1>
-
+            A GTM leader who ships revenue, not decks.
+          </h1>
 
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
             Tailored for {company.role} at {company.name} — here's how I'd move the numbers in 90 days.
@@ -155,12 +157,13 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-20 px-4" style={lightBg}>
+      {/* 2) White background; subheader+icons+stats in accent */}
+      <section className="py-20 px-4" style={whiteBg}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
             The Numbers Speak For Themselves
           </h2>
-          <h3 className="text-xl font-medium text-center mb-16" style={textSlate85}>
+          <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
             Some Career Highlights
           </h3>
 
@@ -171,9 +174,9 @@ export default function Page() {
               { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
               { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
             ].map(({ Icon, stat, label, sub }, i) => (
-              <div key={i} className="text-center p-8 bg-card rounded-xl shadow-sm hover:shadow-lg transition-shadow">
-                <Icon className="w-12 h-12 mx-auto mb-6" style={primaryColorStyle} />
-                <div className="text-4xl font-black mb-2" style={textBlack}>{stat}</div>
+              <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+                <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
+                <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
                 <div className="font-medium" style={primaryColorStyle}>{label}</div>
                 <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
               </div>
@@ -182,13 +185,14 @@ export default function Page() {
         </div>
       </section>
 
+      {/* 3) Accent highlight in sentence; card titles accent */}
       <section className="py-20 px-4 bg-background">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
             The Real Reason You're Hiring This Role
           </h2>
           <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-            It's not just about finding a GTM leader. You need someone who can solve{" "}
+            It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
             <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
             <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
             <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
@@ -203,7 +207,7 @@ export default function Page() {
                     {(idx + 1).toString().padStart(2, "0")}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3" style={primaryColorStyle}>{c.title}</h3>
+                    <h3 className="text-xl font-bold mb-3" style={accentColorStyle}>{c.title}</h3>
                     <ul className="list-disc pl-6 space-y-1" style={textSlate90}>
                       {c.approach.map((bullet, i) => <li key={i}>{bullet}</li>)}
                     </ul>
@@ -215,48 +219,50 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-20 px-4" style={secondaryBg}>
+      {/* 4) Section BG accent, cards white, text black, icons accent, day titles accent */}
+      <section className="py-20 px-4" style={accentBgStyle}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-black text-center mb-4" style={onSecondary}>30-60-90 Day Plan</h2>
+          <h2 className="text-4xl font-black text-center mb-4" style={onAccent}>30-60-90 Day Plan</h2>
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium text-center" style={white85}>
             The road to incrementing gains.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div style={darkCard}>
-              <div className="text-6xl font-black mb-6" style={primaryColorStyle}>30 days</div>
+            <div style={planCard}>
+              <div className="text-6xl font-black mb-6" style={accentColorStyle}>30 days</div>
               <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Foundation</h3>
-              <div className="space-y-3" style={white85}>
-                <p className="flex items-center gap-2"><Users className="w-4 h-4" style={primaryColorStyle} /> Revisit ICP and Identify Buying Triggers</p>
-                <p className="flex items-center gap-2"><BarChart3 className="w-4 h-4" style={primaryColorStyle} /> Create 3 to 5 different playbooks</p>
-                <p className="flex items-center gap-2"><Target className="w-4 h-4" style={primaryColorStyle} /> Run multichannel campaigns targeting companies with high intent as POC</p>
-                <p className="flex items-center gap-2"><Timer className="w-4 h-4" style={primaryColorStyle} /> Track playbook results on dashboard</p>
+              <div className="space-y-3" style={blackText}>
+                <p className="flex items-center gap-2"><Users className="w-4 h-4" style={accentColorStyle} /> Revisit ICP and Identify Buying Triggers</p>
+                <p className="flex items-center gap-2"><BarChart3 className="w-4 h-4" style={accentColorStyle} /> Create 3 to 5 different playbooks</p>
+                <p className="flex items-center gap-2"><Target className="w-4 h-4" style={accentColorStyle} /> Run multichannel campaigns targeting companies with high intent as POC</p>
+                <p className="flex items-center gap-2"><Timer className="w-4 h-4" style={accentColorStyle} /> Track playbook results on dashboard</p>
               </div>
             </div>
 
-            <div style={darkCard}>
-              <div className="text-6xl font-black mb-6" style={primaryColorStyle}>60 days</div>
+            <div style={planCard}>
+              <div className="text-6xl font-black mb-6" style={accentColorStyle}>60 days</div>
               <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Scale</h3>
-              <div className="space-y-3" style={white85}>
-                <p className="flex items-center gap-2"><TrendingUp className="w-4 h-4" style={primaryColorStyle} /> Scale winning playbook and channel by going fully AI automated</p>
-                <p className="flex items-center gap-2"><Settings className="w-4 h-4" style={primaryColorStyle} /> Improve and automate pipeline and CRM hygiene</p>
-                <p className="flex items-center gap-2"><Webhook className="w-4 h-4" style={primaryColorStyle} /> Implement automated scoring and routing</p>
+              <div className="space-y-3" style={blackText}>
+                <p className="flex items-center gap-2"><TrendingUp className="w-4 h-4" style={accentColorStyle} /> Scale winning playbook and channel by going fully AI automated</p>
+                <p className="flex items-center gap-2"><Settings className="w-4 h-4" style={accentColorStyle} /> Improve and automate pipeline and CRM hygiene</p>
+                <p className="flex items-center gap-2"><Webhook className="w-4 h-4" style={accentColorStyle} /> Implement automated scoring and routing</p>
               </div>
             </div>
 
-            <div style={darkCard}>
-              <div className="text-6xl font-black mb-6" style={primaryColorStyle}>90 days</div>
+            <div style={planCard}>
+              <div className="text-6xl font-black mb-6" style={accentColorStyle}>90 days</div>
               <h3 className="text-2xl font-bold mb-6" style={primaryColorStyle}>Optimize</h3>
-              <div className="space-y-3" style={white85}>
-                <p className="flex items-center gap-2"><Lock className="w-4 h-4" style={primaryColorStyle} /> Lock forecast accuracy</p>
-                <p className="flex items-center gap-2"><Bot className="w-4 h-4" style={primaryColorStyle} /> Automate admin work</p>
-                <p className="flex items-center gap-2"><ExternalLink className="w-4 h-4" style={primaryColorStyle} /> Publish GTM SOP V1</p>
+              <div className="space-y-3" style={blackText}>
+                <p className="flex items-center gap-2"><Lock className="w-4 h-4" style={accentColorStyle} /> Lock forecast accuracy</p>
+                <p className="flex items-center gap-2"><Bot className="w-4 h-4" style={accentColorStyle} /> Automate admin work</p>
+                <p className="flex items-center gap-2"><ExternalLink className="w-4 h-4" style={accentColorStyle} /> Publish GTM SOP V1</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4" style={lightBg}>
+      {/* 5) Hypothesis section: BG white; card titles/icons accent; text black */}
+      <section className="py-20 px-4" style={whiteBg}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black text-center" style={textNearBlack}>
             My GTM Hypothesis
@@ -267,78 +273,41 @@ export default function Page() {
           </h3>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={primaryColorStyle}>
-                <Target className="w-5 h-5" /> Researched ICP
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
+                <Target className="w-5 h-5" style={accentColorStyle} /> Researched ICP
               </h3>
-              <ul className="list-disc pl-6 space-y-1" style={textSlate90}>
+              <ul className="list-disc pl-6 space-y-1" style={blackText}>
                 {icp.demographics.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
 
-            <div className="bg-card p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={primaryColorStyle}>
-                <Mic className="w-5 h-5" /> Message Pillars
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
+                <Mic className="w-5 h-5" style={accentColorStyle} /> Message Pillars
               </h3>
-              <ul className="list-disc pl-6 space-y-1" style={textSlate90}>
+              <ul className="list-disc pl-6 space-y-1" style={blackText}>
                 {icp.messagePillars.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
 
-            <div className="bg-card p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={primaryColorStyle}>
-                <Target className="w-5 h-5" /> Channel Focus
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
+                <Target className="w-5 h-5" style={accentColorStyle} /> Channel Focus
               </h3>
-              <ul className="list-disc pl-6 space-y-1" style={textSlate90}>
+              <ul className="list-disc pl-6 space-y-1" style={blackText}>
                 {icp.channelFocus.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
 
-            <div className="bg-card p-8 rounded-xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={primaryColorStyle}>
-                <Lock className="w-5 h-5" /> Risks & Mitigations
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <h3 className="text-lg font-bold mb-3 flex items-center gap-2" style={accentColorStyle}>
+                <Lock className="w-5 h-5" style={accentColorStyle} /> Risks & Mitigations
               </h3>
-              <ul className="list-disc pl-6 space-y-1" style={textSlate90}>
+              <ul className="list-disc pl-6 space-y-1" style={blackText}>
                 {icp.riskMitigation.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-black mb-4" style={textNearBlack}>
-            Get To Know Me
-          </h2>
-          <h3 className="text-xl font-medium mb-12" style={textSlate85}>
-            Here's My LinkedIn
-          </h3>
-
-          <div className="flex flex-col items-center">
-            <div className="mb-8">
-              <img
-                src="https://raw.githubusercontent.com/ricatroliveira-ai/gtm-landing-page/main/profile_li.png"
-                alt="Ricardo Oliveira LinkedIn Profile"
-                className="w-32 h-32 rounded-full shadow-lg mx-auto mb-6"
-              />
-              <h4 className="text-2xl font-bold mb-2" style={textNearBlack}>
-                Ricardo Oliveira
-              </h4>
-              <p className="text-lg" style={textSlate85}>
-                GTM Strategy & Revenue Operations Leader
-              </p>
-            </div>
-
-            <button
-              onClick={() => window.open("https://www.linkedin.com/in/ricatroliveira")}
-              className="px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-[#0077B5] text-white"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.46c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-              Connect on LinkedIn
-            </button>
           </div>
         </div>
       </section>
