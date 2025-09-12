@@ -48,7 +48,67 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {   "company": {     "name": "Adobe",     "role": "Sr. Channel GTM Product Marketing Manager"   },   "challenges": [     {       "title": "Drive Growth in Higher Education Channel",       "approach": [         "Craft persona-based dynamic copy for education segment",         "Implement trigger-based sequencing for higher education leads",         "Operationalize repeatable outbound motions for education audience"       ]     },     {       "title": "Optimize Channel Reach and Impact",       "approach": [         "Designed agentic revenue systems to capture and route signals efficiently",         "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",         "Deployed persona-based dynamic copy for personalized outreach"       ]     },     {       "title": "Accelerate Growth Through Field Execution",       "approach": [         "Applied role- and vertical-specific intros to raise SQL rate",         "Built ICPs and sequenced outreach for structured forecasting",         "Lifted meetings per week from 1 to 6 through GTM architecture"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "31% reply-to-meeting conversion (up from 14%)",     "6x increase in meetings",     "0.08% spam complaint rate",     "0.9% unsubscribe rate"   ],   "icp": {     "demographics": [       "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."     ],     "messagePillars": [       "Scalability and reliability",       "Integration fit and data quality",       "Revenue efficiency"     ],     "channelFocus": [       "Partner co-sell and marketplace attach",       "ABM with executive outreach"     ],     "riskMitigation": [       "Adoption risk → manager-first enablement, default templates, usage goals",       "Data access and integration risk → scoped POC, sandbox, success criteria",       "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"     ]   },   "theme": {     "primary": "#000000",     "secondary": "#FFFFFF",     "accent": "#FF0000"   },   "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10" } as unknown as GTMPageConfig;
+const RAW_CONFIG = {
+  "company": { "name": "Adobe", "role": "Sr. Channel GTM Product Marketing Manager" },
+  "challenges": [
+    {
+      "title": "Drive Growth in Higher Education Channel",
+      "approach": [
+        "Craft persona-based dynamic copy for education segment",
+        "Implement trigger-based sequencing for higher education leads",
+        "Operationalize repeatable outbound motions for education audience"
+      ]
+    },
+    {
+      "title": "Optimize Channel Reach and Impact",
+      "approach": [
+        "Designed agentic revenue systems to capture and route signals efficiently",
+        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
+        "Deployed persona-based dynamic copy for personalized outreach"
+      ]
+    },
+    {
+      "title": "Accelerate Growth Through Field Execution",
+      "approach": [
+        "Applied role- and vertical-specific intros to raise SQL rate",
+        "Built ICPs and sequenced outreach for structured forecasting",
+        "Lifted meetings per week from 1 to 6 through GTM architecture"
+      ]
+    }
+  ],
+  "skills": [
+    "GTM architecture and playbook design",
+    "AI-first execution across phone, email, and LinkedIn",
+    "Forecast, pipeline hygiene, and RevOps automation"
+  ],
+  "trackRecord": [
+    "31% reply-to-meeting conversion (up from 14%)",
+    "6x increase in meetings",
+    "0.08% spam complaint rate",
+    "0.9% unsubscribe rate"
+  ],
+  "icp": {
+    "demographics": [
+      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
+    ],
+    "messagePillars": [
+      "Scalability and reliability",
+      "Integration fit and data quality",
+      "Revenue efficiency"
+    ],
+    "channelFocus": [
+      "Partner co-sell and marketplace attach",
+      "ABM with executive outreach"
+    ],
+    "riskMitigation": [
+      "Adoption risk → manager-first enablement, default templates, usage goals",
+      "Data access and integration risk → scoped POC, sandbox, success criteria",
+      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
+    ]
+  },
+  "theme": { "primary": "#000000", "secondary": "#FFFFFF", "accent": "#FF0000" },
+  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
+} as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
@@ -114,8 +174,8 @@ export default function Page() {
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-            A GTM leader who ships revenue, not decks.
-          </h1>
+  A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
+</h1>
 
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
             Tailored for {company.role} at {company.name} — here's how I'd move the numbers in 90 days.
