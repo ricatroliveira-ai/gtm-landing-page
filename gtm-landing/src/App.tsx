@@ -1,6 +1,4 @@
-// file: app/page.tsx
-"use client";
-
+// src/App.tsx
 import React from "react";
 import {
   Calendar,
@@ -25,10 +23,10 @@ export type GTMPageConfig = {
   skills: string[];
   trackRecord: string[];
   icp: {
-    demographics: string[]; // V2: arrays for bullet lists
-    messagePillars: string[]; // V2
-    channelFocus: string[]; // V2
-    riskMitigation: string[]; // V2
+    demographics: string[];
+    messagePillars: string[];
+    channelFocus: string[];
+    riskMitigation: string[];
   };
   theme: { primary: string; secondary: string; accent: string };
   sendsparkUrl: string;
@@ -47,35 +45,35 @@ function pickTextFor(bgHex: string): "#000000" | "#FFFFFF" {
 const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
-// ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
+// ✅ Raw config (object, not a quoted string)
 const RAW_CONFIG = {
   "company": {
-    "name": "Alkami Technology",
-    "role": "Sr Director, Product Management (GTM)"
+    "name": "Adobe",
+    "role": "Sr. Channel GTM Product Marketing Manager"
   },
   "challenges": [
     {
-      "title": "Standardize GTM Processes for Efficiency",
+      "title": "Drive Growth in Higher Education Channel",
       "approach": [
-        "Design scalable GTM architecture and playbook",
-        "Implement trigger-based sequencing for efficiency",
-        "Deploy AI-first execution across phone, email, and LinkedIn"
+        "Craft persona-based dynamic copy for education segment",
+        "Implement trigger-based sequencing for higher education leads",
+        "Operationalize repeatable outbound motions for education audience"
       ]
     },
     {
-      "title": "Enhance Pricing Governance and Sales Enablement",
+      "title": "Optimize Channel Reach and Impact",
       "approach": [
-        "Establish guardrails for pricing governance and sales enablement",
-        "Ensure pricing and sales processes have RevOps automation",
-        "Utilize AI agents for pricing signals and routing"
+        "Designed agentic revenue systems to capture and route signals efficiently",
+        "Increased meeting-to-client conversion rate by using AI-driven voice cycles with variable inserts",
+        "Deployed persona-based dynamic copy for personalized outreach"
       ]
     },
     {
-      "title": "Improve Cross-Functional Alignment and Transparency",
+      "title": "Accelerate Growth Through Field Execution",
       "approach": [
-        "Orchestrate GTM workflows across multiple tools for visibility",
-        "Deliver operator-grade dashboards for cross-functional alignment",
-        "Track and optimize KPIs across departments for transparency"
+        "Applied role- and vertical-specific intros to raise SQL rate",
+        "Built ICPs and sequenced outreach for structured forecasting",
+        "Lifted meetings per week from 1 to 6 through GTM architecture"
       ]
     }
   ],
@@ -85,35 +83,36 @@ const RAW_CONFIG = {
     "Forecast, pipeline hygiene, and RevOps automation"
   ],
   "trackRecord": [
-    "$1.2M in qualified pipeline in 4 months",
+    "14% to 31% reply-to-meeting conversion",
     "0.08% spam complaints",
     "0.9% unsubscribe rate",
-    "6x increase in meetings"
+    "1 to 6 meetings per week"
   ],
   "icp": {
     "demographics": [
-      "Upper mid-market, Fintech/Payments, high-growth and culture-focused"
+      "Enterprise higher-education institutions (1000+ employees) buying campus-wide licenses via resellers; buyers: CIO/IT leadership, Procurement, Academic Technology/Operations; global, renewal- and seat-expansion-driven."
     ],
     "messagePillars": [
       "Scalability and reliability",
-      "Personalization and AI leverage",
-      "Speed to value and time to first outcome"
+      "Integration fit and data quality",
+      "Revenue efficiency"
     ],
     "channelFocus": [
-      "Outbound POC to prove value fast",
-      "Partner co-sell and marketplace attach"
+      "Partner co-sell and marketplace attach",
+      "ABM with executive outreach"
     ],
     "riskMitigation": [
-      "Data access and integration risk",
-      "Forecast or ROI skepticism"
+      "Adoption risk → manager-first enablement, default templates, usage goals",
+      "Data access and integration risk → scoped POC, sandbox, success criteria",
+      "Forecast or ROI skepticism → KPI contract, weekly scorecard, exit criteria"
     ]
-  },
+  ],
   "theme": {
-    "primary": "#8B8447",
-    "secondary": "#BAA769",
-    "accent": "#47648B"
+    "primary": "#000000",
+    "secondary": "#FF0000",
+    "accent": "#0500CB"
   },
-  "sendsparkUrl": "https://sendspark.com/share/jscpyrqr6capxz2vfkezuaq6asz5eevq"
+  "sendsparkUrl": "https://sendspark.com/share/328hed4g2uzn44yxk9v9o6wg6voh2v10"
 } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
@@ -126,7 +125,7 @@ const CONFIG: GTMPageConfig = {
   }
 } as GTMPageConfig;
 
-export default function Page() {
+export default function App() {
   const { company, challenges, icp, theme, sendsparkUrl } = CONFIG;
 
   // --- Global values & styles ---
@@ -163,7 +162,7 @@ export default function Page() {
 
   const white85: React.CSSProperties = { color: "rgba(255,255,255,0.85)" };
 
-  // Accent-driven styles for requested tweaks
+  // Accent-driven styles
   const accentColorStyle: React.CSSProperties = { color: theme.accent };
   const accentBgStyle: React.CSSProperties = { background: theme.accent, color: pickTextFor(theme.accent) };
   const onAccent: React.CSSProperties = { color: pickTextFor(theme.accent) };
@@ -177,13 +176,13 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* ============================== HERO ============================== */}
       <section className="py-20 px-4 text-center" style={heroStyle}>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-black leading-tight tracking-tight mb-6">
-  A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
-</h1>
+            A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
+          </h1>
 
           <p className="text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium" style={heroTextStyle}>
             Tailored for {company.role} at {company.name} — here's how I'd move the numbers in 90 days.
@@ -199,7 +198,7 @@ export default function Page() {
                 <iframe
                   src={sendsparkUrl.replace("/share/", "/embed/")}
                   className="w-full h-full"
-                  frameBorder="0"
+                  frameBorder={0}
                   title="Personal intro video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -226,53 +225,57 @@ export default function Page() {
       </section>
 
       {/* ============================== STATS ============================== */}
-{/* 2) White background; subheader+icons+stats in accent */}
-<section className="py-20 px-4" style={whiteBg}>
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
-      The Numbers Speak For Themselves
-    </h2>
-    <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
-      Some Career Highlights
-    </h3>
+      {/* 2) White background; subheader+icons+stats in accent */}
+      <section className="py-20 px-4" style={whiteBg}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-black text-center mb-4" style={textNearBlack}>
+            The Numbers Speak For Themselves
+          </h2>
+          <h3 className="text-xl font-medium text-center mb-16" style={accentColorStyle}>
+            Some Career Highlights
+          </h3>
 
-    <div className="grid md:grid-cols-4 gap-8">
-      {[
-        { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
-        { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
-        { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
-        { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
-      ].map(({ Icon, stat, label, sub }, i) => (
-        <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
-          <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
-          <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
-          <div className="font-medium" style={textSlate90}>{label}</div>
-          <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { Icon: DollarSign, stat: "$10M+", label: "Revenue Impact", sub: "in sales closed" },
+              { Icon: ArrowRight, stat: "$1.2M", label: "Pipeline Growth", sub: "created in Q2 2025 alone" },
+              { Icon: Bot, stat: "120%", label: "Exceed Quota W/ AI", sub: "avg quota attained" },
+              { Icon: Users, stat: "16", label: "Leadership Experience", sub: "led teams of up to" }
+            ].map(({ Icon, stat, label, sub }, i) => (
+              <div key={i} className="text-center p-8 bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+                <Icon className="w-12 h-12 mx-auto mb-6" style={accentColorStyle} />
+                <div className="text-4xl font-black mb-2" style={accentColorStyle}>{stat}</div>
+                <div className="font-medium" style={textSlate90}>{label}</div>
+                <div className="text-sm mt-2" style={textSlate70}>{sub}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-{/*============================== CHALLENGES ============================== */}
+      </section>
+
+      {/* ============================== CHALLENGES ============================== */}
       {/* 3) Accent highlight in sentence; card titles accent */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
             The Real Reason You're Hiring This Role
           </h2>
           <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-  It's not just about finding a GTM leader. You need someone who can solve{" "}
-  <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
-  <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
-  <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
-  <span className="block mt-2">Here's exactly how I'd approach each.</span>
-</p>
+            It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
+            <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
+            <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
+            <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
+            <span className="block mt-2">Here's exactly how I'd approach each.</span>
+          </p>
 
           <div className="space-y-8">
             {challenges.map((c, idx) => (
               <div key={idx} style={challengeCardStyle}>
                 <div className="flex items-start gap-4">
-                  <div className="rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1" style={primaryBgStyle}>
+                  <div
+                    className="rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1"
+                    style={primaryBgStyle}
+                  >
                     {(idx + 1).toString().padStart(2, "0")}
                   </div>
                   <div>
@@ -439,7 +442,7 @@ export default function Page() {
       </section>
 
       {/* ============================== FOOTER ============================== */}
-      <footer className="py-8 px-4 text-center bg-secondary text-secondary-foreground">
+      <footer className="py-8 px-4 text-center bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm opacity-80">
             Contact: ricatroliveira@gmail.com • linkedin.com/in/ricatroliveira/ • São Paulo
