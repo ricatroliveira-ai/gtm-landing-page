@@ -48,74 +48,7 @@ const toList = (v: string | string[] | undefined): string[] =>
   Array.isArray(v) ? v : (typeof v === "string" ? v.split(/[\n;]+/).map(s => s.trim()).filter(Boolean) : []);
 
 // ✅ Make.com: replace the token below with your raw JSON (object, not a quoted string)
-const RAW_CONFIG = {
-  "company": {
-    "name": "Intapp",
-    "role": "Sr Director, GTM Transformation"
-  },
-  "challenges": [
-    {
-      "title": "Drive GTM Transformation to Scale",
-      "approach": [
-        "Design GTM architecture and playbook for scalability",
-        "Apply AI-first execution across phone, email, and LinkedIn",
-        "Implement forecast, pipeline hygiene, and RevOps automation"
-      ]
-    },
-    {
-      "title": "Enhance Collaboration Across Cross-Functional Teams",
-      "approach": [
-        "Orchestrate GTM workflows across multiple tools for enhanced collaboration",
-        "Deploy persona-based dynamic copy to increase alignment",
-        "Run fast POC cycles with AI agents to promote cross-functional teamwork"
-      ]
-    },
-    {
-      "title": "Optimize GTM Strategy for Revenue Growth",
-      "approach": [
-        "Apply frameworks like MEDDPICC, TAS, and QBS for structured forecasting",
-        "Utilize AI-driven voice cycles with variable inserts for high conversion rates",
-        "Monitor and optimize KPIs for improved revenue predictability"
-      ]
-    }
-  ],
-  "skills": [
-    "GTM architecture and playbook design",
-    "AI-first execution across phone, email, and LinkedIn",
-    "Forecast, pipeline hygiene, and RevOps automation"
-  ],
-  "trackRecord": [
-    "$1.2M in qualified pipeline in 4 months",
-    "31% reply-to-meeting conversion (up from 14%)",
-    "38% meeting-to-client conversion rate"
-  ],
-  "icp": {
-    "demographics": [
-      "Enterprise",
-      "professional and financial services firms",
-      "SaaS provider"
-    ],
-    "messagePillars": [
-      "Integration fit and data quality",
-      "Scalability and reliability",
-      "Personalization and AI leverage"
-    ],
-    "channelFocus": [
-      "Partner co-sell and marketplace attach",
-      "Field events for regulated or enterprise buyers"
-    ],
-    "riskMitigation": [
-      "Data access and integration risk",
-      "Adoption risk"
-    ]
-  },
-  "theme": {
-    "primary": "#324655",
-    "secondary": "#54C1AC",
-    "accent": "#9DD0C3"
-  },
-  "sendsparkUrl": "https://sendspark.com/share/r9i8a2oux98qlimxslnbarcsg9lwmbwm"
-} as unknown as GTMPageConfig;
+const RAW_CONFIG = {   "company": {     "name": "Lyra Health",     "role": "Sr. Salesforce Developer - GTM"   },   "challenges": [     {       "title": "Improving Sales Processes Efficiency",       "approach": [         "Implement trigger-based sequencing to increase reply rates",         "Optimize GTM workflows using automation tools like Apollo and RapidAPI",         "Utilize cold calling frameworks to boost pick up rates"       ]     },     {       "title": "Scaling Salesforce Instances for Growth",       "approach": [         "Design and deploy a comprehensive GTM stack",         "Create agentic revenue systems for lead scoring and routing",         "Utilize AI-driven voice cycles for higher conversion rates"       ]     },     {       "title": "Enhancing User Experience and Security",       "approach": [         "Apply GTM architecture and playbook design to standardize user flows",         "Use AI-first execution across phone, email, and LinkedIn to streamline secure communications",         "Implement forecast, pipeline hygiene, and RevOps automation to enforce access policies"       ]     }   ],   "skills": [     "GTM architecture and playbook design",     "AI-first execution across phone, email, and LinkedIn",     "Forecast, pipeline hygiene, and RevOps automation"   ],   "trackRecord": [     "23% reply rate",     "2% to 23% reply rate",     "$1.2M qualified pipeline",     "4 months to $1.2M qualified pipeline"   ],   "icp": {     "demographics": [       "Upper mid-market, mental health industry, with a focus on improving outcomes"     ],     "messagePillars": [       "Speed to value and time to first outcome",       "Scalability and reliability",       "Integration fit and data quality"     ],     "channelFocus": [       "Outbound POC to prove value fast",       "Partner co-sell and marketplace attach"     ],     "riskMitigation": [       "Adoption risk - emphasizing the importance of practicing skills in everyday life",       "Forecast or ROI skepticism - providing clear success metrics and outcomes"     ]   },   "theme": {     "primary": "#133D54",     "secondary": "#017A8F",     "accent": "#017A8F"   },   "sendsparkUrl": "https://sendspark.com/share/gn9wk2uw17t6n8unulz3yh0m9jy97vho" } as unknown as GTMPageConfig;
 
 const CONFIG: GTMPageConfig = {
   ...RAW_CONFIG,
@@ -262,12 +195,12 @@ export default function Page() {
             The Real Reason You're Hiring This Role
           </h2>
           <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-  It's not just about finding a GTM leader. You need someone who can solve{" "}
-  <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
-  <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
-  <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
-  <span className="block mt-2">Here's exactly how I'd approach each.</span>
-</p>
+            It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
+            <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
+            <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
+            <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
+            <span className="block mt-2">Here's exactly how I'd approach each.</span>
+          </p>
 
           <div className="space-y-8">
             {challenges.map((c, idx) => (
