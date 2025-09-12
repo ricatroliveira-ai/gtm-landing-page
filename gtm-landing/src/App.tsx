@@ -194,13 +194,14 @@ export default function Page() {
           <h2 className="text-4xl font-black text-center mb-8" style={textNearBlack}>
             The Real Reason You're Hiring This Role
           </h2>
-          <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
-            It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
-            <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
-            <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
-            <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
-            <span className="block mt-2">Here's exactly how I'd approach each.</span>
-          </p>
+          
+        <p className="text-xl text-center mb-16 leading-relaxed" style={textSlate85}>
+  It's not just about finding a GTM leader. <span style={accentColorStyle}>You need someone who can solve</span>{" "}
+  <strong style={primaryColorStyle}>{challenges[0]?.title}</strong>,{" "}
+  <strong style={primaryColorStyle}>{challenges[1]?.title}</strong> and{" "}
+  <strong style={primaryColorStyle}>{challenges[2]?.title}</strong> fast.
+  <span className="block mt-2">Here's exactly how I'd approach each.</span>
+</p>
 
           <div className="space-y-8">
             {challenges.map((c, idx) => (
