@@ -1,3 +1,4 @@
+// file: app/page.tsx
 "use client";
 
 import React from "react";
@@ -314,8 +315,7 @@ A GTM leader who ships <span style={revenueSpanStyle}>revenue</span>, not decks.
           Connect on LinkedIn
         </button>
       </div>
-    </div>
-  </section>
+    </section>
 
   <section className="py-20 px-4 text-center" style={heroStyle}>
     <div className="max-w-4xl mx-auto">
